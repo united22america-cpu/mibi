@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>iMBTI — INFJ The Mindful Clarifier</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FAF8F5",
+            "surface-dim": "#f2eee8",
+            "surface-container-low": "#F5F2ED",
+            "surface-container": "#EDE8E1",
+            "surface-container-highest": "#E4DDD3",
+            "card-cream": "#FFFFFF",
+            "primary": "#20262D",
+            "primary-container": "#343B43",
+            "secondary": "#516354",
+            "secondary-container": "#DCE8DD",
+            "on-secondary-container": "#364A3A",
+            "sage-green": "#B7CBB9",
+            "sage-tint": "#E8F0E9",
+            "soft-peach": "#F5DCD4",
+            "dream-lavender": "#DCD6EC",
+            "soft-rose": "#F7EAE9",
+            "rose-accent": "#C98587",
+            "on-surface": "#23262A",
+            "on-surface-variant": "#5B6168",
+            "outline-subtle": "#E5E0D8"
+          },
+          borderRadius: {
+            '20': '20px',
+            '24': '24px',
+            '32': '32px'
+          },
+          fontFamily: {
+            serif: ["'DM Serif Display'", 'serif'],
+            sans: ["'Plus Jakarta Sans'", 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAF8F5;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased min-h-screen">
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#FAF8F5]/90 backdrop-blur-xl border-b border-outline-subtle/40">
+<div class="max-w-[1320px] mx-auto h-20 px-6 sm:px-8 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="group flex items-center gap-3" href="#"><div class="w-10 h-10 rounded-full bg-[#E8F0E9] border border-[#B7CBB9]/60 flex items-center justify-center transition-transform group-hover:scale-105 relative"><span class="material-symbols-outlined text-[#516354] text-[22px]">potted_plant</span></div><div class="flex flex-col"><span class="font-serif text-2xl text-primary tracking-tight leading-none font-bold">mibi<span class="text-[#B7CBB9]">.</span></span><span class="text-[10px] tracking-widest text-on-surface-variant uppercase font-semibold mt-0.5">Calm Self-Discovery</span></div></a>
+<nav class="hidden xl:flex items-center gap-7 text-sm font-medium text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-primary font-semibold" href="#">Personality Types</a>
+<a class="hover:text-primary transition-colors" href="#">How It Works</a>
+<a class="hover:text-primary transition-colors" href="#">Ask Mibi</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:text-primary text-xs font-semibold tracking-wide transition-all border border-outline-subtle/50" type="button">
+<span class="material-symbols-outlined text-[17px]">language</span>
+<span>English</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<a class="hidden sm:inline-flex text-xs font-semibold px-5 py-2.5 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-all" href="#">Sign In</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary text-white text-xs font-semibold tracking-wide hover:bg-primary-container transition-all shadow-sm" href="#">Discover Your Type</a>
+<div class="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[19px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="w-full pt-28 pb-20 px-4 sm:px-6 md:px-8">
+<div class="max-w-[1280px] mx-auto space-y-12">
+<!-- 1. Hero Personality Reveal Card -->
+<section class="relative w-full rounded-24 overflow-hidden border border-outline-subtle/60 shadow-[0_12px_48px_rgba(52,59,67,0.06)] bg-gradient-to-br from-[#FDF5F2] via-[#F5DCD4]/50 to-[#DCD6EC]/60 p-8 sm:p-12 lg:p-16">
+<!-- Ambient decorative blurs -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#DCD6EC]/60 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/4 -bottom-24 w-96 h-96 rounded-full bg-[#B7CBB9]/40 blur-3xl pointer-events-none"></div>
+<div class="absolute left-10 top-1/2 w-64 h-64 rounded-full bg-white/60 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+<!-- Left side: Narrative & Badges -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-5">
+<!-- Verified Archetype Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-semibold uppercase tracking-wider text-secondary">Verified Archetype Profile</span>
+</div>
+<!-- Big Typographic Header -->
+<div class="space-y-1">
+<div class="flex items-baseline gap-4 flex-wrap">
+<h1 class="font-serif text-6xl sm:text-7xl lg:text-[5.5rem] text-primary tracking-tight leading-none font-bold">INFJ</h1>
+<span class="font-serif italic text-2xl sm:text-3xl text-secondary/90 tracking-wide">— Rare Insight</span>
+</div>
+<h2 class="font-serif text-3xl sm:text-4xl lg:text-[2.65rem] text-primary-container pt-1 font-bold">The Mindful Clarifier</h2>
+</div>
+<p class="text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+              Reflective, perceptive, and driven by deep human alignment and quiet purpose. You harmonize complex emotional realities with clear structural vision, illuminating peace in disordered situations.
+            </p>
+<!-- Action Buttons Toolbar -->
+<div class="flex flex-wrap items-center gap-3 pt-3">
+<button class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white text-xs sm:text-sm font-semibold hover:bg-primary-container shadow-md hover:shadow-lg transition-all hover:scale-[1.02]" id="openShareBtn" type="button">
+<span class="material-symbols-outlined text-[19px]">share</span>
+<span>Share Card (1:1 Story)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/85 text-primary text-xs sm:text-sm font-semibold border border-primary/15 hover:bg-white transition-all shadow-xs" type="button">
+<span class="material-symbols-outlined text-[19px]">bookmark_border</span>
+<span>Save Result</span>
+</button>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sage-tint text-on-secondary-container text-xs sm:text-sm font-semibold border border-sage-green/40 hover:bg-sage-green/30 transition-all shadow-xs" href="#aiCompanionSection"><span class="material-symbols-outlined text-[19px] text-secondary">chat_bubble</span><span>Ask Mibi</span></a>
+<button class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full text-on-surface-variant hover:text-primary text-xs sm:text-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Retake</span>
+</button>
+</div>
+</div>
+<!-- Right side: Visual Personality Character Artwork Medallion -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end"><div class="relative w-80 sm:w-96 rounded-t-[12rem] rounded-b-3xl bg-white/95 backdrop-blur-md p-4 sm:p-5 shadow-[0_20px_50px_rgba(52,59,67,0.08)] border border-white"><div class="w-full rounded-t-[11rem] rounded-b-2xl bg-gradient-to-b from-[#F7F2EC] via-[#FDF5F2] to-[#EBE7F3] p-7 flex flex-col items-center justify-between min-h-[380px] sm:min-h-[420px] text-center border border-white/60 relative overflow-hidden"><div class="px-3 py-1 rounded-full bg-white/90 text-[11px] font-semibold text-secondary uppercase tracking-widest border border-secondary/15 z-10 shadow-2xs">Celebratory Archetype</div><div class="relative w-52 h-52 my-1 flex items-center justify-center z-10"><div class="absolute inset-0 rounded-full border border-dashed border-[#B7CBB9]/60 animate-spin pointer-events-none" style="animation-duration: 40s;"></div><div class="absolute inset-4 rounded-full bg-white/60 shadow-inner pointer-events-none"></div><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB07hZbnkMArVZwdMScAaGBmeAyNN8IhsyBi9muYjoKTXvTwWzaSAltnlmwVRvAbtD7nH8RnieQ5yLjW9C9e7X-vrbIjTtY-wHkPm5cTV36R918Zy7Nv2HFj-fAuNs4KWcqrkiA2zmXqque8IumrmJB2bLjBuRaY5_iZuEFBXuxxinaRtlX2HQoPQhmsxKS1Q4a_SJ1KnYwa26RSwtP-YVBByT01GOu-_6CFeFrbmwv" alt="Mibi celebrating joyful INFJ archetype" class="w-44 h-44 object-contain rounded-full relative z-10 drop-shadow-md hover:scale-105 transition-transform duration-500"></div><div class="space-y-1 relative z-10"><span class="text-[11px] font-semibold tracking-widest text-on-surface-variant uppercase">Cognitive Flow</span><h3 class="font-serif text-2xl text-primary font-medium">Harmonic Intuition</h3><div class="pt-2 flex items-center justify-center gap-2 text-xs font-semibold text-primary/80"><span class="px-2 py-0.5 rounded-md bg-white/80 shadow-2xs">Ni</span><span class="text-secondary/60">•</span><span class="px-2 py-0.5 rounded-md bg-white/80 shadow-2xs">Fe</span><span class="text-secondary/60">•</span><span class="px-2 py-0.5 rounded-md bg-white/80 shadow-2xs">Ti</span><span class="text-secondary/60">•</span><span class="px-2 py-0.5 rounded-md bg-white/80 shadow-2xs">Se</span></div></div></div></div></div>
+</div>
+</section>
+<!-- 2. 4 Dimensional Balances -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Preference Vectors</span>
+<h3 class="font-serif text-3xl sm:text-4xl text-primary mt-1">The 4 Dimensional Balances</h3>
+</div>
+<p class="text-sm text-on-surface-variant max-w-md">
+            Derived through situational reflection, illustrating how energy, intuition, discernment, and structure find balance in you.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Dimension 1: Energy Orientation (Introversion vs Extraversion) -->
+<div class="bg-card-cream rounded-20 p-6 sm:p-7 border border-outline-subtle/70 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<h4 class="text-lg font-bold text-primary">Energy Focus</h4>
+<span class="px-3 py-1 rounded-full bg-sage-tint text-on-secondary-container text-xs font-semibold">
+                  Moderate Introversion
+                </span>
+</div>
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant mb-2">
+<span class="text-primary font-bold">Introversion (I) 68%</span>
+<span>Extraversion (E) 32%</span>
+</div>
+<!-- Pastel Progress Slider Bar -->
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden flex p-0.5">
+<div class="h-full bg-sage-green rounded-full shadow-inner transition-all duration-700" style="width: 68%;"></div>
+<div class="h-full bg-transparent" style="width: 32%;"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mt-5 leading-relaxed">
+              You restore vitality through contemplative solitude and meaningful 1:1 engagement rather than wide-group stimulation.
+            </p>
+</div>
+<!-- Dimension 2: Information Gathering (Sensing vs Intuition) -->
+<div class="bg-card-cream rounded-20 p-6 sm:p-7 border border-outline-subtle/70 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<h4 class="text-lg font-bold text-primary">Perception Horizon</h4>
+<span class="px-3 py-1 rounded-full bg-[#EFEAF6] text-[#4A3E6D] text-xs font-semibold">
+                  Clear Intuition
+                </span>
+</div>
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant mb-2">
+<span class="text-primary font-bold">Intuition (N) 74%</span>
+<span>Sensing (S) 26%</span>
+</div>
+<!-- Pastel Progress Slider Bar (Dusty Lavender) -->
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden flex p-0.5">
+<div class="h-full bg-dream-lavender rounded-full shadow-inner transition-all duration-700" style="width: 74%;"></div>
+<div class="h-full bg-transparent" style="width: 26%;"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mt-5 leading-relaxed">
+              You naturally track meta-patterns, symbolic meaning, and the future trajectory of human values over literal surface details.
+            </p>
+</div>
+<!-- Dimension 3: Decision Style (Thinking vs Feeling) -->
+<div class="bg-card-cream rounded-20 p-6 sm:p-7 border border-outline-subtle/70 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<h4 class="text-lg font-bold text-primary">Evaluation Mode</h4>
+<span class="px-3 py-1 rounded-full bg-[#FAE8E5] text-[#7A3E39] text-xs font-semibold">
+                  Moderate Feeling
+                </span>
+</div>
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant mb-2">
+<span class="text-primary font-bold">Feeling (F) 62%</span>
+<span>Thinking (T) 38%</span>
+</div>
+<!-- Pastel Progress Slider Bar (Soft Peach) -->
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden flex p-0.5">
+<div class="h-full bg-soft-peach rounded-full shadow-inner transition-all duration-700" style="width: 62%;"></div>
+<div class="h-full bg-transparent" style="width: 38%;"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mt-5 leading-relaxed">
+              Decisions are weighed through ethical coherence, interpersonal harmony, and the enduring human impact on collective wellbeing.
+            </p>
+</div>
+<!-- Dimension 4: Life Architecture (Judging vs Perceiving) -->
+<div class="bg-card-cream rounded-20 p-6 sm:p-7 border border-outline-subtle/70 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-2 mb-3">
+<h4 class="text-lg font-bold text-primary">Outer Orientation</h4>
+<span class="px-3 py-1 rounded-full bg-sage-tint text-on-secondary-container text-xs font-semibold">
+                  Strong Structure &amp; Clarity
+                </span>
+</div>
+<div class="flex justify-between text-xs font-semibold text-on-surface-variant mb-2">
+<span class="text-primary font-bold">Judging (J) 81%</span>
+<span>Perceiving (P) 19%</span>
+</div>
+<!-- Pastel Progress Slider Bar -->
+<div class="w-full h-3.5 bg-surface-container rounded-full overflow-hidden flex p-0.5">
+<div class="h-full bg-[#9EB4A0] rounded-full shadow-inner transition-all duration-700" style="width: 81%;"></div>
+<div class="h-full bg-transparent" style="width: 19%;"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mt-5 leading-relaxed">
+              Decided paths and intentional closure afford your rich internal contemplation the freedom to explore without ambient anxiety.
+            </p>
+</div>
+</div>
+<!-- Quiet Accuracy Notice -->
+<div class="flex items-center gap-3 p-4 rounded-20 bg-surface-container-low border border-outline-subtle/80 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span>
+<p class="text-xs sm:text-sm">
+<strong class="font-semibold text-primary">Quiet Accuracy Notice:</strong> Scores reflect preferred cognitive currents, not rigid limits. Your temperament is a gentle, unfolding landscape.
+          </p>
+</div>
+</section>
+<!-- 3. Insight & Strengths Grid -->
+<section class="space-y-6">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Psychological Anatomy</span>
+<h3 class="font-serif text-3xl sm:text-4xl text-primary mt-1">Comprehensive Insights</h3>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Card 1: Distinctive Strengths (Soft Sage Background #E8F0E9) -->
+<div class="lg:col-span-7 bg-[#E8F0E9] rounded-20 p-8 sm:p-10 border border-[#D5E3D7] shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-11 h-11 rounded-full bg-white/90 text-secondary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[22px]">yard</span>
+</div>
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-secondary">Natural Endowments</span>
+<h4 class="font-serif text-2xl sm:text-3xl text-primary">Distinctive Strengths</h4>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Where your intuitive architecture creates ease, psychological safety, and breakthrough direction for those in your orbit.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-5 rounded-20 bg-white/80 border border-white/60 shadow-2xs">
+<div class="w-8 h-8 rounded-full bg-sage-tint flex items-center justify-center text-secondary mb-2.5">
+<span class="material-symbols-outlined text-[18px]">spa</span>
+</div>
+<h5 class="font-bold text-sm text-primary mb-1">Deep Empathetic Listening</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Hearing unspoken subtexts, hidden anxieties, and genuine human aspirations with quiet neutrality.</p>
+</div>
+<div class="p-5 rounded-20 bg-white/80 border border-white/60 shadow-2xs">
+<div class="w-8 h-8 rounded-full bg-sage-tint flex items-center justify-center text-secondary mb-2.5">
+<span class="material-symbols-outlined text-[18px]">filter_vintage</span>
+</div>
+<h5 class="font-bold text-sm text-primary mb-1">Long-Range Vision</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">Naturally forecasting emotional and organizational ripples of a decision years down the road.</p>
+</div>
+<div class="p-5 rounded-20 bg-white/80 border border-white/60 shadow-2xs">
+<div class="w-8 h-8 rounded-full bg-sage-tint flex items-center justify-center text-secondary mb-2.5">
+<span class="material-symbols-outlined text-[18px]">psychology_alt</span>
+</div>
+<h5 class="font-bold text-sm text-primary mb-1">Authentic Principles</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">An unyielding moral compass that avoids vanity, prioritizing integrity over convenient shortcuts.</p>
+</div>
+<div class="p-5 rounded-20 bg-white/80 border border-white/60 shadow-2xs">
+<div class="w-8 h-8 rounded-full bg-sage-tint flex items-center justify-center text-secondary mb-2.5">
+<span class="material-symbols-outlined text-[18px]">nest_eco_leaf</span>
+</div>
+<h5 class="font-bold text-sm text-primary mb-1">Calm Mediation</h5>
+<p class="text-xs text-on-surface-variant leading-relaxed">De-escalating friction by honoring emotional legitimacy while gently framing restorative consensus.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Vulnerabilities & Burnout (Soft Rose Background #F7EAE9) -->
+<div class="lg:col-span-5 bg-[#F7EAE9] rounded-20 p-8 sm:p-10 border border-[#EED7D6] shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-11 h-11 rounded-full bg-white/90 text-rose-accent flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-rose-accent">Gentle Guardrails</span>
+<h4 class="font-serif text-2xl sm:text-3xl text-primary">Vulnerabilities &amp; Burnout</h4>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Soothing awareness prompts to safeguard your internal mental sanctuary and energetic reserves.
+              </p>
+<div class="space-y-4">
+<div class="p-4 rounded-20 bg-white/80 border border-white/60">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-accent text-[20px] mt-0.5">remove_circle_outline</span>
+<div>
+<h5 class="font-bold text-sm text-primary">Hyper-Vigilant Overthinking</h5>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Assuming subtle micro-changes in someone's tone indicate an interpersonal rupture.</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-20 bg-white/80 border border-white/60">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-accent text-[20px] mt-0.5">remove_circle_outline</span>
+<div>
+<h5 class="font-bold text-sm text-primary">Neglecting Physical Boundaries</h5>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Postponing hydration, somatic pauses, and restorative sleep while absorbing group missions.</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-20 bg-white/80 border border-white/60">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-rose-accent text-[20px] mt-0.5">remove_circle_outline</span>
+<div>
+<h5 class="font-bold text-sm text-primary">High-Noise Fragmentations</h5>
+<p class="text-xs text-on-surface-variant mt-0.5 leading-relaxed">Rapid depletion in erratic, hyperactive environments filled with constant reactive alerts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-20 bg-white/50 border border-white/40">
+<p class="font-serif italic text-xs sm:text-sm text-primary text-center">
+                "Your intuition is a sacred instrument; treat your time as its protective casing."
+              </p>
+</div>
+</div>
+<!-- Card 3: Communication Preferences (Rounded Cream Card) -->
+<div class="lg:col-span-6 bg-card-cream rounded-20 p-8 sm:p-10 border border-outline-subtle/80 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-11 h-11 rounded-full bg-[#EFEAF6] text-[#4A3E6D] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Interpersonal Rhythm</span>
+<h4 class="font-serif text-2xl text-primary">Communication Preferences</h4>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Dialogue frameworks that honor INFJ psychological clarity and mutual understanding.
+              </p>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Receptive Depth</span>
+<span class="text-on-surface-variant font-normal">Holistic &amp; Attentive</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-dream-lavender rounded-full" style="width: 88%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">You process not only the spoken words, but the genuine human motivation behind them.</p>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Conflict Resolution Mode</span>
+<span class="text-on-surface-variant font-normal">Gentle Authenticity</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-sage-green rounded-full" style="width: 76%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">Abrasive aggression sparks internal shut-down; warm, principled honesty invites full engagement.</p>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Synchronous Readiness</span>
+<span class="text-on-surface-variant font-normal">Advance Preparation</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-soft-peach rounded-full" style="width: 84%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">Pre-cleared agendas allow intuitive synthesis to shine; surprise impromptu calls induce defensive fatigue.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Work & Learning Styles (Rounded Cream Card) -->
+<div class="lg:col-span-6 bg-card-cream rounded-20 p-8 sm:p-10 border border-outline-subtle/80 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-11 h-11 rounded-full bg-sage-tint text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">architecture</span>
+</div>
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-on-surface-variant">Focus Conditions</span>
+<h4 class="font-serif text-2xl text-primary">Work &amp; Learning Flow</h4>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">
+                Atmospheres and temporal structures that unlock your highest conceptual craft.
+              </p>
+<div class="space-y-5">
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Deep Focus Blocks</span>
+<span class="text-on-surface-variant font-normal">3–4 Hour Sanctuary</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-sage-green rounded-full" style="width: 92%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">Requires continuous spans without micro-interruptions to allow complex ideas to cross-pollinate.</p>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Latitude &amp; Autonomy</span>
+<span class="text-on-surface-variant font-normal">Goal-Oriented Trust</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-dream-lavender rounded-full" style="width: 82%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">Excels when handed destination ownership rather than prescriptive step-by-step policing.</p>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs font-bold text-primary mb-1">
+<span>Mission Meaningfulness</span>
+<span class="text-on-surface-variant font-normal">Human-Centered Value</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-soft-peach rounded-full" style="width: 95%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-1.5">Mechanical performance metrics alone fail to sustain motivation; the human benefit is essential.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. AI Companion Contextual Prompt Card -->
+<section class="w-full" id="aiCompanionSection">
+<div class="bg-gradient-to-r from-card-cream via-[#FAF6F2] to-sage-tint/40 rounded-24 p-8 sm:p-12 border border-outline-subtle/80 shadow-sm">
+<div class="flex flex-col lg:flex-row gap-10 items-start">
+<!-- Left Header Intro -->
+<div class="lg:w-1/3 flex flex-col items-start space-y-3"><div class="relative flex items-center gap-3"><div class="w-16 h-16 rounded-full bg-[#FAF8F5] border-2 border-[#B7CBB9]/60 p-1 shadow-sm overflow-hidden flex items-center justify-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVrYuqUE1FPpdyFRksHUxNBHNBVaw4r-TVGSwpJ6zUQcOzjg2ZeUhNOFx_lFHoUVtvrYYJGVpOdC2KEwt-8hMSzQOEJx5OOJtUJWtiR3AP7E7gjU3jbvfurA7QZQJygEDeDRkrUv8Hn5yzVX5nCT6W7inN0-HArmAMa8Li1RaZo_qXwh3TRXZ0lgJVEXyqrQtCXEpO9gIbg-oF1nE75DtALQ_eYYuRXVSGc8q-wMIj" alt="Mibi mindful AI companion" class="w-full h-full object-cover rounded-full"></div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-secondary/20 shadow-2xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-[11px] font-bold text-secondary uppercase tracking-wider">Mibi Online</span></div></div><div><span class="text-xs font-bold uppercase tracking-widest text-secondary">Reflective Companion</span><h3 class="font-serif text-3xl text-primary mt-1">Discuss INFJ with Ask Mibi</h3></div><p class="text-sm text-on-surface-variant leading-relaxed">Mibi holds a quiet, supportive sanctuary for deeper reflections on emotional boundaries, life crossroads, and replenishing your creative intuition.</p></div>
+<!-- Right Interactive Starter Prompt Chips & Input -->
+<div class="lg:w-2/3 w-full flex flex-col space-y-4">
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Recommended Inquiries for INFJ</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<button class="text-left p-4 rounded-20 bg-white/90 hover:bg-white border border-outline-subtle hover:border-secondary/40 transition-all group shadow-2xs" type="button">
+<span class="text-xs font-semibold text-primary group-hover:text-secondary transition-colors block mb-1.5 leading-snug">
+                    "How can I balance deep creative focus with sudden workplace interruptions?"
+                  </span>
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1">
+                    Explore reflection <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</button>
+<button class="text-left p-4 rounded-20 bg-white/90 hover:bg-white border border-outline-subtle hover:border-secondary/40 transition-all group shadow-2xs" type="button">
+<span class="text-xs font-semibold text-primary group-hover:text-secondary transition-colors block mb-1.5 leading-snug">
+                    "What communication habits help an INFJ connect seamlessly with ESTP colleagues?"
+                  </span>
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1">
+                    Explore reflection <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</button>
+<button class="text-left p-4 rounded-20 bg-white/90 hover:bg-white border border-outline-subtle hover:border-secondary/40 transition-all group shadow-2xs" type="button">
+<span class="text-xs font-semibold text-primary group-hover:text-secondary transition-colors block mb-1.5 leading-snug">
+                    "What are gentle signs that my Fe (Extraverted Feeling) is over-absorbing other people's stress?"
+                  </span>
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1">
+                    Explore reflection <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</button>
+<button class="text-left p-4 rounded-20 bg-white/90 hover:bg-white border border-outline-subtle hover:border-secondary/40 transition-all group shadow-2xs" type="button">
+<span class="text-xs font-semibold text-primary group-hover:text-secondary transition-colors block mb-1.5 leading-snug">
+                    "Can you suggest a 10-minute grounding somatic routine for when intuition feels noisy?"
+                  </span>
+<span class="text-[11px] font-bold text-secondary flex items-center gap-1">
+                    Explore reflection <span class="material-symbols-outlined text-[14px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</button>
+</div>
+<!-- Input Form Container -->
+<form class="relative w-full pt-1" onsubmit="event.preventDefault();">
+<input class="w-full bg-white text-on-surface rounded-full pl-6 pr-32 py-3.5 text-sm border border-outline-subtle focus:outline-none focus:ring-2 focus:ring-secondary/30 placeholder:text-on-surface-variant/70 shadow-xs" placeholder="Ask Mibi anything about your INFJ temperament, boundaries, or creative flow..." type="text">
+<button class="absolute right-1.5 top-2.5 px-6 py-2 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary-container transition-all flex items-center gap-1.5 shadow-sm" type="submit">
+<span>Reflect</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- 1:1 Social Share Card Modal -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6" id="shareModal">
+<div class="relative bg-card-cream rounded-24 max-w-md w-full p-6 sm:p-8 shadow-2xl flex flex-col items-center border border-outline-subtle">
+<!-- Close Button -->
+<button class="absolute top-4 right-4 w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-highest transition-colors" id="closeShareBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<span class="text-[11px] font-bold uppercase tracking-widest text-secondary mb-1">Social Archetype Card</span>
+<h4 class="font-serif text-2xl text-primary mb-6 text-center">Instagram Story / 1:1 Square</h4>
+<!-- The 1:1 Card Aesthetic Object -->
+<div class="w-72 h-72 sm:w-80 sm:h-80 rounded-24 bg-gradient-to-br from-[#F5DCD4] via-[#FDF5F2] to-[#DCD6EC] p-6 text-primary flex flex-col justify-between relative overflow-hidden shadow-md border border-white">
+<!-- Subtle Ambient Blurs -->
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/40 blur-xl"></div>
+<div class="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-sage-green/30 blur-lg"></div>
+<!-- Top Row -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white flex items-center justify-center shadow-2xs">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+</div>
+<span class="font-serif text-base font-bold tracking-tight text-primary">mibi.</span>
+</div>
+<span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white/80 text-on-surface tracking-wider uppercase">Archetype ID</span>
+</div>
+<!-- Middle Statement -->
+<div class="relative z-10 text-center my-auto">
+<span class="font-serif text-5xl font-medium tracking-tight text-primary block">INFJ</span>
+<p class="font-serif text-base italic text-secondary mt-0.5">The Mindful Clarifier</p>
+<div class="w-8 h-0.5 bg-primary/20 mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] leading-snug text-on-surface-variant max-w-[210px] mx-auto font-medium">
+            "Harmonizing deep human empathy with structured intuitive vision."
+          </p>
+</div>
+<!-- Bottom QR & Watermark -->
+<div class="relative z-10 flex items-end justify-between">
+<div class="flex flex-col text-left">
+<span class="text-[9px] uppercase tracking-wider text-on-surface-variant font-semibold">Verify Insight</span>
+<span class="text-[11px] font-bold text-primary">mibi.app/infj</span>
+</div>
+<div class="w-10 h-10 bg-white rounded-lg p-1 shadow-xs flex items-center justify-center">
+<svg class="w-full h-full text-primary" fill="currentColor" viewBox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14-2h4v2h-4v-2zm-4 0h2v4h-2v-4zm2 4h2v4h-2v-4zm2 2h4v2h-4v-2zm0-4h2v2h-2v-2z"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-3 mt-6 w-full">
+<button class="flex-1 py-3 rounded-full bg-primary text-white text-xs font-semibold hover:bg-primary-container transition-all text-center shadow-xs" type="button">
+          Download Image
+        </button>
+<button class="flex-1 py-3 rounded-full bg-surface-container text-primary text-xs font-semibold hover:bg-surface-container-highest transition-all text-center" type="button">
+          Copy Link
+        </button>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="w-full bg-surface-container-low border-t border-outline-subtle/70">
+<div class="max-w-[1280px] mx-auto px-6 sm:px-8 py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
+<div class="md:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-[#E8F0E9] border border-[#B7CBB9]/60 flex items-center justify-center"><span class="material-symbols-outlined text-[#516354] text-[18px]">potted_plant</span></div><span class="font-serif text-2xl text-primary tracking-tight leading-none font-bold">mibi<span class="text-[#B7CBB9]">.</span></span></div>
+<p class="font-serif italic text-lg text-primary leading-snug">Get to know the person behind your personality.</p>
+<p class="text-xs text-on-surface-variant max-w-sm leading-relaxed">A serene, contemplative atmosphere engineered with Mibi to slow the rhythm of self-reflection, offering gentle psychological perspectives without clinical haste.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Discovery</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="text-primary font-semibold hover:underline" href="#">Explore Types</a>
+<a class="hover:text-primary transition-colors" href="#">Methodology</a>
+<a class="hover:text-primary transition-colors" href="#">Ask Mibi</a>
+<a class="hover:text-primary transition-colors" href="#">Journal</a>
+</nav>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Reflective Space</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Accessibility</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Ecosystem</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Admin Portal</a>
+<a class="hover:text-primary transition-colors" href="#">Quiet Principles</a>
+<a class="hover:text-primary transition-colors" href="#">About mibi</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-subtle/60 flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex flex-wrap items-center gap-2 text-xs text-on-surface-variant"><span class="font-medium mr-1">Language:</span><a class="px-2.5 py-1 rounded-full bg-card-cream text-primary font-bold shadow-2xs" href="#">EN</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">ES</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">FR</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">DE</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">JA</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">KO</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">HI</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">ID</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">TH</a><a class="px-2.5 py-1 rounded-full hover:bg-card-cream transition-colors" href="#">PT</a></div><p class="text-xs text-on-surface-variant">© 2025 mibi. All gentle rights reserved.</p></div>
+<div class="pt-4 text-center"><p class="text-[11px] text-on-surface-variant/70 italic">mibi is an independent, reflective self-discovery experience and is not affiliated with the Myers &amp; Briggs Foundation or clinical diagnostic tools.</p></div>
+</div>
+</footer>
+<!-- Modal Script Interactions -->
+<script>
+    const openBtn = document.getElementById('openShareBtn');
+    const closeBtn = document.getElementById('closeShareBtn');
+    const shareModal = document.getElementById('shareModal');
+
+    if (openBtn && shareModal && closeBtn) {
+      openBtn.addEventListener('click', () => {
+        shareModal.classList.remove('hidden');
+      });
+
+      closeBtn.addEventListener('click', () => {
+        shareModal.classList.add('hidden');
+      });
+
+      shareModal.addEventListener('click', (e) => {
+        if (e.target === shareModal) {
+          shareModal.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+
+</body></html>
