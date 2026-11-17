@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Ask Mibi • AI Personality Companion &amp; Reflection Sanctuary</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&amp;family=Nunito:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&amp;family=Nunito:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    @keyframes breatheExpand {
+      0%, 100% { transform: scale(0.92); opacity: 0.75; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+    .animate-breathe {
+      animation: breatheExpand 8s ease-in-out infinite;
+    }
+    @keyframes softFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    .animate-float {
+      animation: softFloat 6s ease-in-out infinite;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container": "#efeeeb",
+            "inverse-surface": "#30312f",
+            "tertiary-fixed": "#e5dff6",
+            "surface": "#fbf9f6",
+            "border-subtle": "#EFEBE4",
+            "sage-green": "#B7CBB9",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e4e2df",
+            "on-secondary-fixed": "#0e1f14",
+            "dark-slate": "#343B43",
+            "on-secondary": "#ffffff",
+            "outline": "#75777b",
+            "on-secondary-fixed-variant": "#394b3d",
+            "on-tertiary-fixed-variant": "#484556",
+            "card-cream": "#FFFFFF",
+            "on-secondary-container": "#57695a",
+            "soft-peach": "#F5DCD4",
+            "tertiary-fixed-dim": "#c9c3d9",
+            "surface-container-high": "#eae8e5",
+            "primary-fixed-dim": "#c0c7d1",
+            "error": "#ba1a1a",
+            "on-surface": "#1b1c1a",
+            "on-primary-fixed-variant": "#404750",
+            "on-primary-container": "#9ea5af",
+            "on-background": "#1b1c1a",
+            "inverse-primary": "#c0c7d1",
+            "outline-variant": "#c5c6cb",
+            "surface-variant": "#e4e2df",
+            "surface-container-low": "#f5f3f0",
+            "surface-bright": "#fbf9f6",
+            "tertiary": "#252333",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#151c23",
+            "on-tertiary-fixed": "#1c1a29",
+            "secondary": "#516354",
+            "surface-dim": "#dbdad7",
+            "dream-lavender": "#DCD6EC",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#f2f0ed",
+            "on-tertiary-container": "#a6a1b6",
+            "on-surface-variant": "#44474b",
+            "primary-fixed": "#dce3ed",
+            "tertiary-container": "#3b3849",
+            "secondary-container": "#d3e8d5",
+            "primary": "#1e252d",
+            "primary-container": "#343b43",
+            "background": "#fbf9f6",
+            "on-error": "#ffffff",
+            "surface-tint": "#585f68",
+            "secondary-fixed-dim": "#b8ccba",
+            "muted-rose": "#D9A8A9",
+            "on-primary": "#ffffff",
+            "cloud-cream": "#FAF8F5",
+            "secondary-fixed": "#d3e8d5"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "3xl": "1.5rem",
+            "chat": "20px",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.375rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "space-lg": "2rem",
+            "space-xl": "3rem",
+            "gutter": "1.5rem",
+            "margin": "2.5rem"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            display: ["Playfair Display", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link href="./mibi.css" rel="stylesheet"><link rel="stylesheet" href="./mibi-upgrade.css" /></head>
+<body class="bg-surface text-on-surface font-sans antialiased selection:bg-sage-green/30 selection:text-dark-slate">
+<!-- Top Navigation Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#EFEBE4]">
+<div class="h-20 w-full max-w-7xl mx-auto px-gutter flex items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="group flex items-center gap-3" data-path="explore" href="#"><div class="w-10 h-10 rounded-full overflow-hidden bg-[#F5DCD4] flex items-center justify-center border border-[#B7CBB9]/60 shadow-sm transition-transform group-hover:scale-105"><img src="./assets/mibi-lantern.png" alt="Mibi companion logo" class="w-full h-full object-cover"></div><div class="flex flex-col"><span class="font-display font-bold text-2xl tracking-tight text-dark-slate leading-none brand-logo">mibi<span class="text-[#80534d]">.</span></span><span class="text-[11px] font-semibold text-secondary uppercase tracking-widest mt-0.5">Sanctuary Mind</span></div></a>
+<nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-on-surface-variant"><a class="hover:text-dark-slate transition-colors py-1" data-path="discover" href="#">Discover</a><a class="hover:text-dark-slate transition-colors py-1" data-path="personality-types" href="#">Personality Types</a><a class="hover:text-dark-slate transition-colors py-1" data-path="how-it-works" href="#">How It Works</a><a aria-current="page" class="text-dark-slate font-semibold py-1 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B7CBB9] after:rounded-full" data-path="ai-companion" href="#">Ask Mibi</a><a class="hover:text-dark-slate transition-colors py-1" data-path="about" href="#">About</a></nav>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/80 border border-[#EFEBE4] text-xs font-semibold text-on-surface-variant hover:text-dark-slate transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">language</span>
+<span>English</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<a class="hidden md:inline-flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-semibold text-on-surface-variant hover:text-dark-slate transition-all" data-path="login" href="#">Sign In</a>
+<a class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-dark-slate text-[#FAF8F5] text-xs font-semibold tracking-wide hover:bg-[#1e252d] shadow-sm hover:shadow transition-all" data-path="assessment" href="#">Discover Your Type</a>
+<div class="w-9 h-9 rounded-full bg-[#EFEBE4] border border-white flex items-center justify-center text-dark-slate shadow-inner">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Sanctuary Experience -->
+<main class="w-full pt-24 pb-16 bg-surface min-h-screen">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-gutter">
+<!-- 1. Header & Context Banner -->
+<section class="mt-4 mb-6">
+<div class="w-full bg-[#FAF8F5] border border-[#EFEBE4] rounded-3xl p-6 md:p-7 shadow-[0_4px_24px_rgba(81,99,84,0.04)] relative overflow-hidden">
+<!-- Subtle gentle warmth halos -->
+<div class="absolute -right-16 -top-16 w-72 h-72 rounded-full bg-[#F5DCD4]/40 blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-20 w-80 h-80 rounded-full bg-[#B7CBB9]/25 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5"><div class="flex items-center gap-4"><div class="w-14 h-14 rounded-2xl overflow-hidden bg-[#F5DCD4] border-2 border-[#B7CBB9] flex items-center justify-center shadow-sm shrink-0"><img src="./assets/mibi-lantern.png" alt="Mibi mascot" class="w-full h-full object-cover"></div><div class="flex flex-col gap-1"><div class="flex items-center gap-3 flex-wrap"><h1 class="font-display font-medium text-2xl sm:text-3xl text-dark-slate tracking-tight companion-header">Ask Mibi</h1><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF2EC] border border-[#B7CBB9]/50 text-xs font-semibold text-[#394B3D]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B7CBB9] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#516354]"></span></span><span>Attuned &amp; Active • Warm Reflection</span></div></div><p class="text-xs sm:text-sm text-on-surface-variant font-normal">A warm, peaceful companion tailored for gentle personal clarity, emotional recharge, and quiet grounding.</p></div></div><div class="flex items-center gap-2.5 flex-wrap self-start md:self-auto"><div class="inline-flex items-center gap-2 bg-white/90 border border-[#EFEBE4] px-3.5 py-1.5 rounded-full shadow-sm"><span class="w-2 h-2 rounded-full bg-[#DCD6EC]"></span><span class="text-xs font-bold text-dark-slate tracking-wide">INFJ</span><span class="text-xs text-outline-variant">·</span><span class="text-xs font-medium text-[#516354]">Mindful Clarifier</span></div><button class="inline-flex items-center gap-1.5 bg-white/90 border border-[#EFEBE4] hover:border-[#B7CBB9] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-dark-slate transition-colors" title="Toggle language" type="button"><span class="material-symbols-outlined text-[15px] text-[#516354]">translate</span><span>English</span><span class="material-symbols-outlined text-[14px] text-outline">unfold_more</span></button></div></div>
+<!-- Gentle disclaimer banner styled as a warm, serene note -->
+<div class="mt-5 relative z-10 w-full bg-[#FFFBF8] border border-[#F5DCD4] rounded-2xl px-4 py-3 flex items-start sm:items-center gap-3"><div class="flex items-center gap-4"><div class="w-14 h-14 rounded-2xl overflow-hidden bg-[#F5DCD4] border-2 border-[#B7CBB9] flex items-center justify-center shadow-sm shrink-0"><img src="./assets/mibi-lantern.png" alt="Mibi mascot" class="w-full h-full object-cover"></div><div class="flex flex-col gap-1"><div class="flex items-center gap-3 flex-wrap"><h1 class="font-display font-medium text-2xl sm:text-3xl text-dark-slate tracking-tight companion-header">Ask Mibi</h1><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF2EC] border border-[#B7CBB9]/50 text-xs font-semibold text-[#394B3D]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B7CBB9] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#516354]"></span></span><span>Attuned &amp; Active • Warm Reflection</span></div></div><p class="text-xs sm:text-sm text-on-surface-variant font-normal"><span class="font-semibold text-dark-slate">Serene Sanctuary Note:</span> Ask Mibi offers supportive wellness dialogue, emotional pacing, and reflective insight. It does not replace clinical therapy, psychiatric assessment, or medical guidance.</p></div></div><div class="flex items-center gap-2.5 flex-wrap self-start md:self-auto"><div class="inline-flex items-center gap-2 bg-white/90 border border-[#EFEBE4] px-3.5 py-1.5 rounded-full shadow-sm"><span class="w-2 h-2 rounded-full bg-[#DCD6EC]"></span><span class="text-xs font-bold text-dark-slate tracking-wide">INFJ</span><span class="text-xs text-outline-variant">·</span><span class="text-xs font-medium text-[#516354]">Mindful Clarifier</span></div><button class="inline-flex items-center gap-1.5 bg-white/90 border border-[#EFEBE4] hover:border-[#B7CBB9] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-dark-slate transition-colors" title="Toggle language" type="button"><span class="material-symbols-outlined text-[15px] text-[#516354]">translate</span><span>English</span><span class="material-symbols-outlined text-[14px] text-outline">unfold_more</span></button></div></div>
+</div>
+</section>
+<!-- 2. Main Reflection Chat Canvas: Two Harmonious Columns -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
+<!-- Left Column: Conversational Thread (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-5">
+<!-- Serene Conversational Container in Cloud Cream (#FAF8F5) -->
+<div class="bg-[#FAF8F5] border border-[#EFEBE4] rounded-3xl p-5 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col gap-7 min-h-[580px]">
+<!-- Timeline Horizon -->
+<div class="flex items-center justify-center gap-3 opacity-70">
+<div class="h-[1px] w-12 bg-[#B7CBB9]/50"></div>
+<span class="text-[11px] font-semibold tracking-widest uppercase text-[#516354]">Today's Contemplative Thread</span>
+<div class="h-[1px] w-12 bg-[#B7CBB9]/50"></div>
+</div>
+<!-- Message 1: Companion (Soft Botanical Avatar & 20px corners) -->
+<div class="flex items-start gap-3.5 max-w-3xl"><div class="w-10 h-10 rounded-full overflow-hidden bg-[#F5DCD4] border border-[#B7CBB9] flex items-center justify-center shrink-0 mt-1 shadow-sm"><img src="./assets/mibi-lantern.png" alt="Mibi" class="w-full h-full object-cover"></div><div class="flex flex-col gap-1.5 flex-1 max-w-2xl"><div class="flex items-center gap-2"><span class="text-xs font-bold text-dark-slate">Mibi</span><span class="px-1.5 py-0.2 rounded-full bg-[#E3EFE5] text-[10px] font-semibold text-[#516354]">Companion</span><span class="text-[11px] text-outline">09:42 AM</span></div><div class="bg-white/95 border border-[#EFEBE4] text-on-surface p-4 sm:p-5 rounded-[20px] rounded-tl-sm shadow-[0_2px_8px_rgba(0,0,0,0.02)]"><p class="text-sm sm:text-[15px] leading-relaxed text-[#2C333A]">Hi, I'm Mibi! Here to help you explore your thoughts, understand your preferences, and discover new perspectives. What would you like to talk about?</p></div></div></div>
+<!-- Message 2: User in Soft Dark Slate Container -->
+<div class="flex items-start justify-end gap-3.5 max-w-3xl ml-auto w-full">
+<div class="flex flex-col items-end gap-1.5 max-w-xl">
+<div class="flex items-center gap-2">
+<span class="text-[11px] text-outline">09:45 AM</span>
+<span class="text-xs font-bold text-dark-slate">You</span>
+</div>
+<!-- User message in soft dark slate pill container with 20px corners -->
+<div class="bg-dark-slate text-[#FAF8F5] p-4 sm:p-5 rounded-[20px] rounded-tr-sm shadow-md text-left">
+<p class="text-sm sm:text-[15px] leading-relaxed font-normal">
+                    I often feel completely drained after back-to-back collaborative brainstorming sessions. Is there a gentle way to recharge without making my team feel like I am pulling away?
+                  </p>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#F5DCD4] border border-[#EAC2B7] flex items-center justify-center shrink-0 mt-1 shadow-sm text-dark-slate">
+<span class="material-symbols-outlined text-[19px]">person</span>
+</div>
+</div>
+<!-- Message 3: AI Companion (Rich Reflection Response Formatting) -->
+<div class="flex items-start gap-3.5 max-w-3xl"><div class="w-10 h-10 rounded-full overflow-hidden bg-[#F5DCD4] border border-[#B7CBB9] flex items-center justify-center shrink-0 mt-1 shadow-sm"><img src="./assets/mibi-lantern.png" alt="Mibi" class="w-full h-full object-cover"></div><div class="flex flex-col gap-2 flex-1"><div class="flex items-center gap-2"><span class="text-xs font-bold text-dark-slate">Mibi</span><span class="px-1.5 py-0.2 rounded-full bg-[#E3EFE5] text-[10px] font-semibold text-[#516354]">Companion</span><span class="text-[11px] text-outline">09:46 AM</span></div><div class="bg-white/95 border border-[#EFEBE4] text-on-surface p-5 sm:p-6 rounded-[20px] rounded-tl-sm shadow-[0_2px_12px_rgba(0,0,0,0.02)] flex flex-col gap-4"><p class="text-sm sm:text-[15px] leading-relaxed text-[#2C333A]">That internal fatigue is deeply characteristic of an <strong class="font-semibold text-dark-slate">INFJ</strong>. Your Extraverted Feeling (Fe) instinctually mirrors ambient social expectations, while your Introverted Intuition (Ni) quietly synthesizes deeper patterns. Back-to-back brainstorming floods this delicate cognitive bridge.</p><div class="flex items-start gap-3.5 bg-[#FAF8F5] border border-[#EFEBE4] p-3.5 sm:p-4 rounded-2xl shadow-sm"><div class="w-8 h-8 rounded-full bg-[#E3EFE5] text-[#516354] flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">hourglass_bottom</span></div><div class="text-xs sm:text-sm text-on-surface leading-relaxed"><strong class="font-semibold text-dark-slate">Cognitive reset window:</strong> Protect a 15-minute sensory pause right after meetings. Turn off notifications, step away from screens, and allow your nervous system to naturally digest the shared energy before starting operational work.</div></div><div class="flex items-start gap-3.5 bg-[#FAF8F5] border border-[#EFEBE4] p-3.5 sm:p-4 rounded-2xl shadow-sm"><div class="w-8 h-8 rounded-full bg-[#DCD6EC]/60 text-[#3B3849] flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">sync_alt</span></div><div class="text-xs sm:text-sm text-on-surface leading-relaxed"><strong class="font-semibold text-dark-slate">Asynchronous synthesis:</strong> Grant yourself permission to share: <em>“I’d love to let these ideas marinate and post a consolidated thought on our board this afternoon.”</em> This protects team connection while honoring your natural depth.</div></div><div class="p-4 sm:p-5 rounded-2xl bg-[#FFF5F1] border border-[#F5DCD4] flex flex-col gap-2 relative overflow-hidden"><div class="flex items-center gap-2 text-[#8C6D65]"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="text-[11px] font-bold uppercase tracking-wider">Today's Reflection Prompt</span></div><p class="font-display italic text-base sm:text-lg text-dark-slate leading-snug">“What drained your energy most today: the sheer volume of voices, rapid decision-making, or ambiguous expectations?”</p></div><p class="text-xs sm:text-sm text-on-surface-variant font-normal">Honoring your pace is an act of care for both your inner balance and the relationships you cherish.</p><div class="pt-2 border-t border-[#F2EEE9] flex flex-wrap items-center gap-2"><button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#E3EFE5] border border-[#EFEBE4] text-xs font-semibold text-dark-slate shadow-sm transition-all" type="button"><span class="material-symbols-outlined text-[16px] text-[#516354]">bookmark</span><span>Save to Journal</span></button><button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#DCD6EC]/40 border border-[#EFEBE4] text-xs font-semibold text-dark-slate shadow-sm transition-all" type="button"><span class="material-symbols-outlined text-[16px] text-[#516354]">menu_book</span><span>Explore Guide</span></button><button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#F2EEE9] border border-[#EFEBE4] text-xs font-medium text-on-surface-variant hover:text-dark-slate shadow-sm transition-all ml-auto" onclick="navigator.clipboard?.writeText('Cognitive reset window: Protect 15 minutes of sensory pause right after meetings. Asynchronous synthesis: Give yourself permission to let ideas settle before posting consolidated thoughts.');" type="button"><span class="material-symbols-outlined text-[16px]">content_copy</span><span>Copy</span></button></div></div></div></div>
+</div>
+<!-- Recommended Reflection Prompt Pills at the Bottom -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#516354] px-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>Recommended Inquiries for Today</span>
+</div>
+<div class="flex flex-wrap gap-2.5">
+<button class="text-left text-xs sm:text-sm font-medium bg-[#FAF8F5] hover:bg-[#E5EFE7] border border-[#EFEBE4] text-dark-slate px-4 py-2.5 rounded-full shadow-sm transition-all flex items-center gap-2 group" onclick="insertPrompt('How can I gently explain my working rhythm to a fast-paced Thinking manager?')" type="button">
+<span class="material-symbols-outlined text-[15px] text-[#516354] group-hover:translate-x-0.5 transition-transform">east</span>
+<span>How can I explain my working style to a Thinking-dominant manager?</span>
+</button>
+<button class="text-left text-xs sm:text-sm font-medium bg-[#FAF8F5] hover:bg-[#E5EFE7] border border-[#EFEBE4] text-dark-slate px-4 py-2.5 rounded-full shadow-sm transition-all flex items-center gap-2 group" onclick="insertPrompt('Suggest a gentle 5-minute evening decompression exercise.')" type="button">
+<span class="material-symbols-outlined text-[15px] text-[#516354] group-hover:translate-x-0.5 transition-transform">east</span>
+<span>Suggest a 5-minute evening reflection exercise</span>
+</button>
+<button class="text-left text-xs sm:text-sm font-medium bg-[#FAF8F5] hover:bg-[#E5EFE7] border border-[#EFEBE4] text-dark-slate px-4 py-2.5 rounded-full shadow-sm transition-all flex items-center gap-2 group" onclick="insertPrompt('Why do I feel torn between wanting gentle structure and spontaneous solitude?')" type="button">
+<span class="material-symbols-outlined text-[15px] text-[#516354] group-hover:translate-x-0.5 transition-transform">east</span>
+<span>Why do I feel torn between structure and spontaneity?</span>
+</button>
+</div>
+</div>
+<!-- Cozy Input Bar: Rounded Pill Input with Mic, Language Indicator, & Friendly Send -->
+<div class="bg-[#FAF8F5] border border-[#EFEBE4] p-4 sm:p-5 rounded-3xl shadow-[0_2px_16px_rgba(0,0,0,0.02)] flex flex-col gap-3">
+<form class="flex items-center gap-2.5 w-full" onsubmit="event.preventDefault(); handleSend();">
+<div class="relative w-full flex-1">
+<textarea class="w-full bg-white text-dark-slate placeholder:text-outline/70 border border-[#EFEBE4] focus:border-[#B7CBB9] focus:ring-2 focus:ring-[#B7CBB9]/30 rounded-2xl px-4 py-3 text-sm resize-none transition-all outline-none" id="chatInput" placeholder="Ask Mibi anything about your personality, work, or relationships..." rows="2"></textarea>
+<div class="absolute right-3.5 bottom-3.5 flex items-center gap-1.5">
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#FAF8F5] border border-[#EFEBE4] text-[#516354] uppercase tracking-wider">EN</span>
+</div>
+</div>
+<!-- Friendly Mic & Send Buttons -->
+<div class="flex items-center gap-2 shrink-0">
+<button class="w-11 h-11 rounded-full bg-white hover:bg-[#FAF8F5] border border-[#EFEBE4] text-[#516354] flex items-center justify-center shadow-sm hover:scale-105 transition-all" title="Speak your thought" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+<button class="px-5 h-11 rounded-full bg-dark-slate hover:bg-[#1E252D] text-[#FAF8F5] flex items-center justify-center gap-1.5 text-xs font-semibold shadow-sm hover:shadow transition-all group" type="submit">
+<span>Send</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">send</span>
+</button>
+</div>
+</form>
+<div class="flex items-center justify-between text-xs text-on-surface-variant px-1 pt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-[#516354]">lock</span>
+<span>Encrypted &amp; private reflection space.</span>
+</div>
+<button class="underline hover:text-dark-slate text-[11px] font-medium transition-colors" onclick="resetChat()" type="button">
+                Reset Session
+              </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Wellness Toolkit & Cognitive Anchor (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-5">
+<!-- 1. INFJ Lens Summary Card with Mini Pastel Dimension Bars -->
+<div class="bg-[#FAF8F5] border border-[#EFEBE4] rounded-3xl p-6 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#516354]">Active Lens</span>
+<span class="px-2.5 py-0.5 rounded-full bg-[#DCD6EC]/70 text-[#252333] text-[11px] font-bold tracking-wide">INFJ-A</span>
+</div>
+<div class="flex items-center gap-3.5">
+<div class="w-14 h-14 rounded-2xl overflow-hidden bg-[#F5DCD4] border-2 border-[#B7CBB9]/70 shadow-sm shrink-0 flex items-center justify-center"><img class="w-full h-full object-cover" src="./assets/mibi-lantern.png" alt="Mibi portrait for INFJ Advocate lens"></div>
+<div class="flex flex-col">
+<h3 class="font-display font-medium text-lg text-dark-slate leading-tight">INFJ The Advocate</h3>
+<p class="text-xs text-on-surface-variant leading-snug mt-0.5">Quietly visionary, attuned to meaning and organic harmony.</p>
+</div>
+</div>
+<!-- Mini Pastel Dimension Bars -->
+<div class="flex flex-col gap-3 pt-2">
+<!-- Introversion / Extraversion (Sage Green) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="font-semibold text-dark-slate">Introversion (84%)</span>
+<span class="text-on-surface-variant">16%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-[#EFEBE4] overflow-hidden">
+<div class="h-full bg-[#B7CBB9] rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+<!-- Intuition / Sensing (Dusty Lavender) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="font-semibold text-dark-slate">Intuition (78%)</span>
+<span class="text-on-surface-variant">22%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-[#EFEBE4] overflow-hidden">
+<div class="h-full bg-[#DCD6EC] rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Feeling / Thinking (Soft Peach) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="font-semibold text-dark-slate">Feeling (69%)</span>
+<span class="text-on-surface-variant">31%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-[#EFEBE4] overflow-hidden">
+<div class="h-full bg-[#F5DCD4] rounded-full" style="width: 69%;"></div>
+</div>
+</div>
+<!-- Judging / Perceiving (Muted Sage Tint) -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-[11px] font-medium">
+<span class="font-semibold text-dark-slate">Judging (72%)</span>
+<span class="text-on-surface-variant">28%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-[#EFEBE4] overflow-hidden">
+<div class="h-full bg-[#CADAC9] rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+<a class="mt-1 w-full py-2.5 px-4 rounded-full bg-white hover:bg-[#EFEBE4]/70 border border-[#EFEBE4] text-dark-slate text-center text-xs font-semibold transition-colors flex items-center justify-center gap-1.5 shadow-sm" href="#">
+<span>View Full Personality Blueprint</span>
+<span class="material-symbols-outlined text-[15px]">arrow_outward</span>
+</a>
+</div>
+<!-- 2. 'Cadence Breathing' Interactive Circle Widget -->
+<div class="bg-[#FAF8F5] border border-[#EFEBE4] rounded-3xl p-6 shadow-sm flex flex-col gap-4 text-center">
+<div class="flex items-center justify-between text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#516354] text-[20px]">air</span>
+<h3 class="text-sm font-bold text-dark-slate">Cadence Breathing</h3>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#E3EFE5] text-[#394B3D]">Gentle Reset</span>
+</div>
+<p class="text-xs text-on-surface-variant text-left leading-relaxed">
+              Take 3 tranquil cycles to quiet mental chatter before responding to demanding threads.
+            </p>
+<!-- Interactive Breathing Circle with mint/sage 4-second animation -->
+<div class="flex items-center justify-center py-4">
+<div class="relative w-36 h-36 rounded-full bg-[#E3EFE5]/50 flex items-center justify-center">
+<!-- Breathing Aura -->
+<div class="absolute inset-0 rounded-full bg-[#B7CBB9]/40 animate-breathe"></div>
+<!-- Core Circle -->
+<div class="relative w-24 h-24 rounded-full bg-white border border-[#B7CBB9] shadow-sm flex flex-col items-center justify-center z-10">
+<span class="font-display font-medium text-2xl text-dark-slate" id="breathCounter">4s</span>
+<span class="text-[10px] font-semibold text-[#516354] uppercase tracking-wider" id="breathPhase">Inhale</span>
+</div>
+</div>
+</div>
+<div class="text-[11px] font-semibold tracking-widest uppercase text-[#516354]">
+              Inhale · Retain · Exhale
+            </div>
+</div>
+<!-- 3. 'Self-Led Pace' Card -->
+<div class="bg-white border border-[#EFEBE4] rounded-3xl p-6 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-2 text-dark-slate">
+<div class="w-7 h-7 rounded-full bg-[#F5DCD4]/60 flex items-center justify-center text-[#8C6D65]">
+<span class="material-symbols-outlined text-[17px]">hourglass_empty</span>
+</div>
+<h4 class="text-sm font-bold">Self-Led Pace</h4>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+              There are no timer pressures or urgent expectations here. Pause between thoughts, reflect for days, or return whenever your mind feels ready.
+            </p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Serene Footer -->
+<footer class="w-full bg-[#FAF8F5] border-t border-[#EFEBE4]">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-gutter py-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10">
+<div class="md:col-span-4 flex flex-col gap-3"><div class="flex items-center gap-2.5"><div class="w-8 h-8 rounded-full overflow-hidden bg-[#F5DCD4] border border-[#B7CBB9]/60 flex items-center justify-center shadow-sm"><img src="./assets/mibi-lantern.png" alt="Mibi" class="w-full h-full object-cover"></div><span class="font-display font-bold text-2xl text-dark-slate leading-none brand-logo">mibi<span class="text-[#80534d]">.</span></span></div><p class="font-display italic text-sm text-dark-slate">Get to know the person behind your personality.</p><p class="text-xs text-on-surface-variant max-w-sm leading-relaxed">A serene, contemplative companion engineered to slow the rhythm of self-reflection, offering gentle psychological perspectives without clinical haste.</p></div>
+<div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2.5">
+<span class="text-xs font-bold uppercase tracking-wider text-dark-slate">Discovery</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-dark-slate transition-colors" data-path="explore-types" href="#">Explore Types</a>
+<a class="hover:text-dark-slate transition-colors" data-path="methodology" href="#">Methodology</a>
+<a aria-current="page" class="text-dark-slate font-semibold" data-path="ai-companion" href="#">Ask Mibi</a>
+<a class="hover:text-dark-slate transition-colors" data-path="journal" href="#">Journal</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2.5">
+<span class="text-xs font-bold uppercase tracking-wider text-dark-slate">Reflective Space</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-dark-slate transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a>
+<a class="hover:text-dark-slate transition-colors" data-path="terms-of-service" href="#">Terms of Service</a>
+<a class="hover:text-dark-slate transition-colors" data-path="accessibility" href="#">Accessibility</a>
+<a class="hover:text-dark-slate transition-colors" data-path="contact" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2.5">
+<span class="text-xs font-bold uppercase tracking-wider text-dark-slate">Ecosystem</span>
+<nav class="flex flex-col gap-2 text-xs text-on-surface-variant">
+<a class="hover:text-dark-slate transition-colors" data-path="admin-portal" href="#">Admin Portal</a>
+<a class="hover:text-dark-slate transition-colors" data-path="how-it-works" href="#">Quiet Principles</a>
+<a class="hover:text-dark-slate transition-colors" data-path="about" href="#">About iMBTI</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="py-6 border-t border-[#EFEBE4] flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-1.5 text-xs text-on-surface-variant"><span class="font-semibold text-dark-slate mr-1">Language:</span><a class="px-2.5 py-1 rounded-full bg-white border border-[#EFEBE4] font-semibold text-dark-slate" href="#">EN</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">ES</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">FR</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">DE</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">JA</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">KO</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">HI</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">ID</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">FIL</a><a class="px-2.5 py-1 rounded-full hover:bg-white text-on-surface-variant hover:text-dark-slate transition-colors" href="#">TH</a></div>
+<p class="text-xs text-on-surface-variant">© 2025 mibi. sanctuary. All gentle rights reserved.</p>
+</div>
+<div class="pt-3 text-center">
+<p class="text-[11px] text-on-surface-variant/80 italic leading-relaxed">mibi. is an independent, reflective self-discovery companion and is not affiliated with the Myers &amp; Briggs Foundation or clinical diagnostic tools.</p>
+</div>
+</div>
+</footer>
+<!-- Script for Interactive Breathing & Chat Inputs -->
+<script>
+    function insertPrompt(text) {
+      const input = document.getElementById('chatInput');
+      if (input) {
+        input.value = text.trim();
+        input.focus();
+      }
+    }
+
+    function handleSend() {
+      const input = document.getElementById('chatInput');
+      if (!input || !input.value.trim()) return;
+      input.value = '';
+    }
+
+    function resetChat() {
+      const input = document.getElementById('chatInput');
+      if (input) input.value = '';
+    }
+
+    // Dynamic Cadence Breathing phase text
+    const phases = [
+      { text: "Inhale", count: 4 },
+      { text: "Retain", count: 4 },
+      { text: "Exhale", count: 4 }
+    ];
+    let currentPhaseIndex = 0;
+    let secondsLeft = 4;
+
+    setInterval(() => {
+      const counterEl = document.getElementById('breathCounter');
+      const phaseEl = document.getElementById('breathPhase');
+      if (!counterEl || !phaseEl) return;
+
+      secondsLeft--;
+      if (secondsLeft <= 0) {
+        currentPhaseIndex = (currentPhaseIndex + 1) % phases.length;
+        secondsLeft = phases[currentPhaseIndex].count;
+        phaseEl.textContent = phases[currentPhaseIndex].text;
+      }
+      counterEl.textContent = secondsLeft + 's';
+    }, 1000);
+  </script>
+
+
+<script type="module" src="./js/ask.js"></script><script type="module" src="./js/mibi-upgrade.js"></script></body></html>
