@@ -1,350 +1,42 @@
-<!DOCTYPE html><html lang="en"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta content="web_standard" name="shell-type">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Discover your personality, explore 16 archetypes, and reflect with Mibi.">
 <title>mibi — A little more you, every day</title>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./mibi.css">
 <style>
-    @layer base {
-      html, body {
-        margin: 0;
-        padding: 0;
-        background-color: #FAF8F5;
-      }
-      body {
-        overscroll-behavior: none;
-      }
-      main > :first-child {
-        margin-top: 0 !important;
-      }
-    }
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface-container": "#efeeeb",
-            "inverse-surface": "#30312f",
-            "tertiary-fixed": "#e5dff6",
-            "surface": "#FAF8F5",
-            "border-subtle": "#EFEBE4",
-            "sage-green": "#B7CBB9",
-            "dark-slate": "#343B43",
-            "outline": "#75777b",
-            "card-cream": "#FFFFFF",
-            "soft-peach": "#F5DCD4",
-            "peach-sand": "#F4CFBE",
-            "dream-lavender": "#DCD6EC",
-            "muted-rose": "#D9A8A9",
-            "cloud-cream": "#FAF8F5",
-            "primary": "#343B43",
-            "primary-container": "#343B43",
-            "secondary": "#516354",
-            "secondary-container": "#B7CBB9",
-            "on-surface": "#343B43",
-            "on-surface-variant": "#686E74"
-          },
-          borderRadius: {
-            "20px": "20px",
-            "3xl": "1.75rem",
-            "4xl": "2.25rem",
-            "full": "9999px"
-          },
-          fontFamily: {
-            sans: ["Plus Jakarta Sans", "sans-serif"],
-            display: ["DM Serif Display", "serif"]
-          }
-        }
-      }
-    }
-  </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link href="./mibi.css" rel="stylesheet"></head>
-<body class="bg-[#FAF8F5] text-dark-slate font-sans antialiased min-h-screen">
-<!-- Top Navigation -->
-<header class="sticky top-0 z-50 w-full bg-[#FAF8F5]/90 backdrop-blur-md transition-all">
-<div class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-<!-- Logo with Botanical Flower Icon -->
-<a class="flex items-center gap-3 group" href="#"><div class="w-10 h-10 rounded-2xl bg-[#F5DCD4] flex items-center justify-center text-dark-slate group-hover:scale-105 transition-transform duration-300 shadow-sm overflow-hidden"><img src="./assets/mibi-wave.png" alt="mibi mascot" class="w-9 h-9 object-cover rounded-xl"></div><div class="flex items-baseline"><span class="text-2xl font-bold tracking-tight text-dark-slate lowercase">mibi</span><span class="text-2xl font-bold text-muted-rose">.</span></div></a>
-<!-- Desktop Nav Links -->
-<nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-dark-slate/80"><a class="text-dark-slate font-semibold hover:text-dark-slate transition-colors" href="#">Discover</a><a class="hover:text-dark-slate transition-colors" href="#temperaments">Personality Types</a><a class="hover:text-dark-slate transition-colors" href="#how-it-works">How It Works</a><a class="hover:text-dark-slate transition-colors" href="#companion">Ask Mibi</a><a class="hover:text-dark-slate transition-colors" href="#about">About</a></nav>
-<!-- Language Selector & CTAs -->
-<div class="flex items-center gap-3 sm:gap-4">
-<!-- 10-Language Pill Selector with Globe -->
-<div class="relative hidden sm:flex items-center">
-<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/80 hover:bg-white text-dark-slate/80 hover:text-dark-slate text-xs font-semibold tracking-wide border border-border-subtle shadow-xs transition-all" type="button">
-<span class="material-symbols-outlined text-[16px] text-sage-green font-normal">public</span>
-<span>English (10)</span>
-<span class="material-symbols-outlined text-[14px] opacity-60">expand_more</span>
-</button>
-</div>
-<a class="hidden md:inline-flex text-[14px] font-semibold text-dark-slate/80 hover:text-dark-slate px-3 py-1.5 transition-colors" href="#">Sign in</a>
-<a class="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full bg-dark-slate text-white text-[14px] font-semibold hover:bg-dark-slate/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm" href="#assessment">
-<span>Discover Your Type</span>
-<span class="text-xs">↗</span>
-</a>
-</div>
-</div>
-</header>
-<main class="w-full">
-<!-- Hero Section (Exactly matching Image 2 & 3) -->
-<section class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-12"><div class="relative w-full rounded-[28px] bg-[#F5DCD4] overflow-hidden pt-12 pb-14 px-6 sm:px-12 lg:px-16 border border-[#ECD1C8]/60 shadow-[0_12px_40px_rgba(217,168,169,0.12)]"><svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30 preserve-3d" fill="none" preserveAspectRatio="none" viewBox="0 0 1200 600"><path d="M-50 450 C 250 480, 200 120, 500 240 C 800 360, 950 180, 1250 200" fill="none" stroke="#D9A8A9" stroke-width="2.5"></path><path d="M-50 490 C 260 520, 240 160, 540 280 C 840 400, 990 220, 1250 240" fill="none" stroke="#D9A8A9" stroke-width="2"></path><path d="M-50 530 C 270 560, 280 200, 580 320 C 880 440, 1030 260, 1250 280" fill="none" stroke="#D9A8A9" stroke-width="1.5"></path></svg><div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center"><div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start"><div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/75 backdrop-blur-sm text-dark-slate font-bold text-xs tracking-wider uppercase mb-6 shadow-xs"><span class="w-2 h-2 rounded-full bg-sage-green mr-2"></span>A LITTLE MORE YOU, EVERY DAY</div><h1 class="text-3xl sm:text-5xl lg:text-[54px] font-bold text-dark-slate tracking-tight leading-[1.12] mb-5">A little more you, every day.</h1><p class="text-base sm:text-lg text-dark-slate/80 font-normal max-w-xl leading-relaxed mb-8">Discover the way you think, connect, and grow. Your journey of self-discovery starts here.</p><div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-10"><a class="group inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-dark-slate text-white text-base font-semibold hover:bg-dark-slate/90 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 shadow-md" href="#assessment"><span>Discover Your Type</span><span class="text-base font-normal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span></a><a class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/80 hover:bg-white text-dark-slate text-base font-semibold border border-white/60 hover:scale-[1.02] transition-all duration-300 shadow-xs" href="#companion"><span>Meet Mibi</span><span class="w-2 h-2 rounded-full bg-sage-green"></span></a></div><div class="grid grid-cols-3 gap-3 w-full max-w-md"><div class="bg-[#DCD6EC]/90 rounded-2xl p-3.5 text-center shadow-xs"><span class="block text-[11px] uppercase tracking-wider text-dark-slate/60 font-semibold mb-0.5">Vibe</span><span class="text-sm font-bold text-dark-slate">Calm &amp; Gentle</span></div><div class="bg-[#B7CBB9]/90 rounded-2xl p-3.5 text-center shadow-xs"><span class="block text-[11px] uppercase tracking-wider text-dark-slate/60 font-semibold mb-0.5">Guide</span><span class="text-sm font-bold text-dark-slate">Mibi AI</span></div><div class="bg-white/80 rounded-2xl p-3.5 text-center shadow-xs"><span class="block text-[11px] uppercase tracking-wider text-dark-slate/60 font-semibold mb-0.5">Format</span><span class="text-sm font-bold text-dark-slate">16 Archetypes</span></div></div></div><div class="lg:col-span-5 flex justify-center"><div class="relative"><div class="absolute -inset-4 bg-gradient-to-tr from-[#DCD6EC]/60 via-[#B7CBB9]/50 to-[#F4CFBE]/50 rounded-full blur-xl opacity-70"></div><div class="relative bg-white/80 backdrop-blur-sm p-4 rounded-3xl border border-white/60 shadow-lg"><img src="./assets/mibi-wave.png" alt="Mibi 3D mascot waving friendly" class="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-2xl shadow-sm mx-auto"><div class="mt-3 flex items-center justify-between px-3 py-1.5 bg-[#FAF8F5]/90 rounded-xl border border-border-subtle"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-sage-green"></span><span class="text-xs font-semibold text-dark-slate">Mibi is waving hello!</span></div><span class="text-[11px] text-dark-slate/60">Your companion</span></div></div></div></div></div></div></section>
-<!-- Benefit Cards Section (Directly from Image 2 & extended grid) -->
-<section class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Benefit Card 1: Understand yourself (From Image 2) -->
-<div class="bg-white rounded-[24px] p-7 border border-[#EFEBE4] shadow-xs hover:shadow-md hover:border-dream-lavender transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-2xl bg-[#DCD6EC]/60 flex items-center justify-center text-dark-slate mb-5">
-<!-- Lavender brain icon -->
-<svg class="w-6 h-6 text-[#554971]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-<path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"></path>
-<path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-dark-slate mb-2">Understand yourself</h3>
-<p class="text-[15px] text-dark-slate/75 leading-relaxed">
-              Find patterns in the way you think, feel, and recharge your inner energy.
-            </p>
-</div>
-<div class="mt-6 pt-4 border-t border-border-subtle/70 flex items-center gap-2 text-xs font-semibold text-secondary">
-<span class="w-1.5 h-1.5 rounded-full bg-sage-green"></span>
-<span>Cognitive rhythm pacing</span>
-</div>
-</div>
-<!-- Benefit Card 2: Connect better (From Image 2) -->
-<div class="bg-white rounded-[24px] p-7 border border-[#EFEBE4] shadow-xs hover:shadow-md hover:border-muted-rose transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-2xl bg-[#D9A8A9]/40 flex items-center justify-center text-dark-slate mb-5">
-<!-- Muted rose heart-in-hands icon -->
-<svg class="w-6 h-6 text-[#7E4547]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-dark-slate mb-2">Connect better</h3>
-<p class="text-[15px] text-dark-slate/75 leading-relaxed">
-              Explore how different personalities interact, communicate, and resolve tension.
-            </p>
-</div>
-<div class="mt-6 pt-4 border-t border-border-subtle/70 flex items-center gap-2 text-xs font-semibold text-secondary">
-<span class="w-1.5 h-1.5 rounded-full bg-sage-green"></span>
-<span>Gentle relational clarity</span>
-</div>
-</div>
-<!-- Benefit Card 3: Discover your strengths -->
-<div class="bg-white rounded-[24px] p-7 border border-[#EFEBE4] shadow-xs hover:shadow-md hover:border-sage-green transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-2xl bg-[#B7CBB9]/50 flex items-center justify-center text-dark-slate mb-5">
-<!-- Sun in sage icon -->
-<svg class="w-6 h-6 text-[#2E4333]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="4"></circle>
-<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-dark-slate mb-2">Discover your strengths</h3>
-<p class="text-[15px] text-dark-slate/75 leading-relaxed">
-              Uncover your quiet genius and how you bring natural harmony into everyday work and relationships.
-            </p>
-</div>
-<div class="mt-6 pt-4 border-t border-border-subtle/70 flex items-center gap-2 text-xs font-semibold text-secondary">
-<span class="w-1.5 h-1.5 rounded-full bg-sage-green"></span>
-<span>Non-judgmental strengths</span>
-</div>
-</div>
-<!-- Benefit Card 4: Grow at your own pace -->
-<div class="bg-white rounded-[24px] p-7 border border-[#EFEBE4] shadow-xs hover:shadow-md hover:border-soft-peach transition-all duration-300 flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 rounded-2xl bg-[#F5DCD4]/70 flex items-center justify-center text-dark-slate mb-5">
-<!-- Sprout/Spa icon -->
-<svg class="w-6 h-6 text-[#6B4335]" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-<path d="M7 20h10"></path>
-<path d="M12 20v-8"></path>
-<path d="M12 12a5 5 0 0 1 5-5c0 4-5 5-5 5Z"></path>
-<path d="M12 12a5 5 0 0 0-5-5c0 4 5 5 5 5Z"></path>
-</svg>
-</div>
-<h3 class="text-xl font-bold text-dark-slate mb-2">Grow at your own pace</h3>
-<p class="text-[15px] text-dark-slate/75 leading-relaxed">
-              Reflective prompts designed for steady self-compassion, unhurried by external metrics.
-            </p>
-</div>
-<div class="mt-6 pt-4 border-t border-border-subtle/70 flex items-center gap-2 text-xs font-semibold text-secondary">
-<span class="w-1.5 h-1.5 rounded-full bg-sage-green"></span>
-<span>Lifelong personal evolution</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Interactive Likert Prompt Section (Preserved & Styled with Wellness Aesthetic) -->
-<section class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-10" id="assessment">
-<div class="bg-white rounded-3xl p-8 sm:p-12 border border-[#EFEBE4] shadow-xs text-center max-w-3xl mx-auto">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8F5] text-xs font-semibold text-dark-slate/70 mb-4">
-<span class="w-2 h-2 rounded-full bg-sage-green"></span>
-<span>Sample Reflective Question · Dimension: Introversion vs Extraversion</span>
-</div>
-<h3 class="text-xl sm:text-2xl font-bold text-dark-slate max-w-xl mx-auto mb-8 leading-snug">
-          “After an eventful week, spending solitary time in a comfortable, quiet space is what truly replenishes you.”
-        </h3>
-<!-- 5-Point Likert Dots with Smooth Hover -->
-<div class="flex items-center justify-center gap-3 sm:gap-6 mb-6">
-<button class="group flex flex-col items-center gap-2 focus:outline-none" type="button">
-<span class="w-11 h-11 rounded-full bg-[#FAF8F5] group-hover:bg-[#F5DCD4] border border-[#EFEBE4] flex items-center justify-center transition-all duration-200">
-<span class="w-3.5 h-3.5 rounded-full bg-dark-slate/30 group-hover:scale-125 transition-transform"></span>
-</span>
-<span class="text-xs font-medium text-dark-slate/60">Disagree</span>
-</button>
-<button class="group flex flex-col items-center gap-2 focus:outline-none" type="button">
-<span class="w-9 h-9 rounded-full bg-[#FAF8F5] group-hover:bg-[#F5DCD4] border border-[#EFEBE4] flex items-center justify-center transition-all duration-200">
-<span class="w-2.5 h-2.5 rounded-full bg-dark-slate/30 group-hover:scale-125 transition-transform"></span>
-</span>
-<span class="text-[11px] font-medium text-dark-slate/50">Slightly</span>
-</button>
-<button class="group flex flex-col items-center gap-2 focus:outline-none" type="button">
-<span class="w-8 h-8 rounded-full bg-[#FAF8F5] group-hover:bg-[#F5DCD4] border border-[#EFEBE4] flex items-center justify-center transition-all duration-200">
-<span class="w-2 h-2 rounded-full bg-dark-slate/30 group-hover:scale-125 transition-transform"></span>
-</span>
-<span class="text-[11px] font-medium text-dark-slate/50">Neutral</span>
-</button>
-<button class="group flex flex-col items-center gap-2 focus:outline-none" type="button">
-<span class="w-9 h-9 rounded-full bg-[#FAF8F5] group-hover:bg-[#B7CBB9]/60 border border-[#EFEBE4] flex items-center justify-center transition-all duration-200">
-<span class="w-2.5 h-2.5 rounded-full bg-dark-slate/30 group-hover:scale-125 transition-transform"></span>
-</span>
-<span class="text-[11px] font-medium text-dark-slate/50">Slightly</span>
-</button>
-<button class="group flex flex-col items-center gap-2 focus:outline-none" type="button">
-<span class="w-11 h-11 rounded-full bg-dark-slate text-white flex items-center justify-center shadow-md scale-105 transition-all duration-200">
-<span class="material-symbols-outlined text-[18px]">check</span>
-</span>
-<span class="text-xs font-bold text-dark-slate">Agree</span>
-</button>
-</div>
-<p class="text-xs text-dark-slate/60 italic">Gentle 5-point spectrum · ~8 minutes to complete · 100% private</p>
-</div>
-</section>
-<!-- Personality Types Grid (16 Types Redesigned into Colorful Pastel Cards with 20px corners) -->
-<section class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-16" id="temperaments">
-<div class="text-center max-w-2xl mx-auto mb-12">
-<div class="inline-flex items-center px-3.5 py-1 rounded-full bg-white border border-border-subtle text-xs font-semibold uppercase tracking-wider text-dark-slate/70 mb-3 shadow-xs">
-          The 16 Archetypes
-        </div>
-<h2 class="text-3xl sm:text-4xl font-bold text-dark-slate tracking-tight mb-3">
-          Explore the Four Temperament Families
-        </h2>
-<p class="text-base text-dark-slate/70">
-          Discover the gentle strengths and distinctive perspective each personality brings to the world.
-        </p>
-<!-- Temperament Tabs -->
-<div class="flex flex-wrap items-center justify-center gap-2 mt-8" id="typeFilters">
-<button class="filter-btn px-4 py-2 rounded-full bg-dark-slate text-white text-xs font-bold transition-all shadow-xs" data-target="all">All 16 Types</button>
-<button class="filter-btn px-4 py-2 rounded-full bg-white hover:bg-white/80 border border-border-subtle text-dark-slate/80 text-xs font-semibold transition-all" data-target="visionaries">Visionaries (NT)</button>
-<button class="filter-btn px-4 py-2 rounded-full bg-white hover:bg-white/80 border border-border-subtle text-dark-slate/80 text-xs font-semibold transition-all" data-target="harmony">Harmony Keepers (NF)</button>
-<button class="filter-btn px-4 py-2 rounded-full bg-white hover:bg-white/80 border border-border-subtle text-dark-slate/80 text-xs font-semibold transition-all" data-target="anchors">Grounded Anchors (SJ)</button>
-<button class="filter-btn px-4 py-2 rounded-full bg-white hover:bg-white/80 border border-border-subtle text-dark-slate/80 text-xs font-semibold transition-all" data-target="explorers">Spontaneous Explorers (SP)</button>
-</div>
-</div>
-<!-- 16 Types Grid (Alternating Lavender #DCD6EC, Sage #B7CBB9, Peach #F5DCD4, Soft Rose #D9A8A9) -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="typesGrid"><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="visionaries"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">INTJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NT</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Architect</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Thoughtful strategists who analyze systems with quiet clarity and deep independent foresight.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Visionary · NT</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#B7CBB9]/50 border border-[#B7CBB9] hover:bg-[#B7CBB9]/80 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="visionaries"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">INTP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NT</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Logician</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Philosophical minds exploring the elegant architecture of concepts with quiet intellectual honesty.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Visionary · NT</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#F5DCD4]/70 border border-[#F5DCD4] hover:bg-[#F5DCD4] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="visionaries"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ENTJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NT</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Commander</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Decisive organizers who turn ambitious possibilities into grounded realities with clear resolve.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Visionary · NT</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="visionaries"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ENTP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NT</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Debater</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Playful innovators connecting unexpected threads and playfully deconstructing traditional ideas.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Visionary · NT</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#F5DCD4]/70 border border-[#F5DCD4] hover:bg-[#F5DCD4] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="harmony"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">INFJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NF</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Advocate</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Empathetic visionaries guided by a quiet dedication to human growth, meaning, and authentic connection.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Harmony · NF</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#B7CBB9]/50 border border-[#B7CBB9] hover:bg-[#B7CBB9]/80 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="harmony"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">INFP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NF</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Mediator</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Poetic and reflective souls honoring inner values, gentle creativity, and deep emotional truth.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Harmony · NF</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="harmony"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ENFJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NF</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Protagonist</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Inspiring guides who illuminate the strengths of others and foster warm, unified communities.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Harmony · NF</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#F5DCD4]/70 border border-[#F5DCD4] hover:bg-[#F5DCD4] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="harmony"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ENFP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">NF</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Campaigner</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Enthusiastic and free-spirited explorers celebrating human potential and spontaneous creative sparks.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Harmony · NF</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#B7CBB9]/50 border border-[#B7CBB9] hover:bg-[#B7CBB9]/80 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="anchors"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ISTJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SJ</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Logistician</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Reliable, methodical protectors of stability who value integrity, tradition, and calm follow-through.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Anchor · SJ</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="anchors"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ISFJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SJ</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Defender</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Devoted caretakers providing quiet security, warm hospitality, and unwavering personal dedication.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Anchor · SJ</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#F5DCD4]/70 border border-[#F5DCD4] hover:bg-[#F5DCD4] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="anchors"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ESTJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SJ</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Executive</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Pragmatic organizers bringing order, transparency, and dependable stewardship to collective tasks.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Anchor · SJ</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#B7CBB9]/50 border border-[#B7CBB9] hover:bg-[#B7CBB9]/80 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="anchors"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ESFJ</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SJ</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Consul</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Attentive community builders ensuring everyone feels seen, supported, and gently valued.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Anchor · SJ</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="explorers"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ISTP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SP</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Virtuoso</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Hands-on troubleshooters who explore mechanics, crafts, and reality with calm, curious agility.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Explorer · SP</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#B7CBB9]/50 border border-[#B7CBB9] hover:bg-[#B7CBB9]/80 hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="explorers"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ISFP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SP</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Adventurer</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Gentle artists expressing beauty and aesthetic balance through present-moment immersion.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Explorer · SP</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#F5DCD4]/70 border border-[#F5DCD4] hover:bg-[#F5DCD4] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="explorers"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ESTP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SP</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Entrepreneur</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Energetic responders navigating dynamic circumstances with humor, clarity, and instant action.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Explorer · SP</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div><div class="personality-card rounded-[20px] p-6 bg-[#DCD6EC]/60 border border-[#DCD6EC] hover:bg-[#DCD6EC] hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between" data-category="explorers"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="text-2xl font-bold tracking-tight text-dark-slate">ESFP</span><span class="px-2 py-0.5 rounded-full bg-white/60 text-[10px] font-bold text-dark-slate/70">SP</span></div><div class="w-8 h-8 rounded-full overflow-hidden bg-white/70 flex items-center justify-center shadow-xs border border-white/60"><img src="./assets/mibi-wave.png" alt="mibi" class="w-7 h-7 object-cover"></div></div><h4 class="text-lg font-bold text-dark-slate mb-1">The Entertainer</h4><p class="text-xs text-dark-slate/80 leading-relaxed mb-4">Vibrant spirits sharing joy, playful spontaneity, and genuine presence wherever they wander.</p></div><div class="flex items-center justify-between pt-3 border-t border-dark-slate/10 text-[11px] font-semibold text-dark-slate/70"><span>Explorer · SP</span><span class="hover:translate-x-1 transition-transform">↗</span></div></div></div>
-</section>
-<!-- AI Companion Teaser (Wellness Card with Mockup) -->
-<section class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-14" id="companion"><div class="rounded-3xl bg-[#FAF8F5] border border-[#EFEBE4] p-8 sm:p-12 lg:p-16 shadow-xs relative overflow-hidden"><div class="absolute -right-10 -bottom-10 w-96 h-96 opacity-30 pointer-events-none"><svg height="100%" width="100%"><pattern height="20" id="dotPattern" patternUnits="userSpaceOnUse" width="20"><circle cx="3" cy="3" fill="#B7CBB9" r="2"></circle></pattern><rect fill="url(#dotPattern)" height="100%" width="100%"></rect></svg></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10"><div class="lg:col-span-6"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B7CBB9]/40 text-dark-slate text-xs font-semibold mb-4"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>Gentle Self-Discovery AI</span></div><h2 class="text-3xl sm:text-4xl font-bold text-dark-slate tracking-tight leading-tight mb-4">Ask Mibi</h2><p class="text-base text-dark-slate/80 leading-relaxed mb-6">Hi, I'm Mibi! Here to help you explore your thoughts, understand your preferences, and discover new perspectives. What would you like to talk about?</p><div class="space-y-3 mb-8"><div class="flex items-center gap-3"><span class="w-5 h-5 rounded-full bg-[#B7CBB9]/60 flex items-center justify-center text-dark-slate text-xs">✓</span><span class="text-sm font-medium text-dark-slate">Zero pressure · Formulated around your natural pace</span></div><div class="flex items-center gap-3"><span class="w-5 h-5 rounded-full bg-[#B7CBB9]/60 flex items-center justify-center text-dark-slate text-xs">✓</span><span class="text-sm font-medium text-dark-slate">100% private · Never trained on your personal journal</span></div><div class="flex items-center gap-3"><span class="w-5 h-5 rounded-full bg-[#B7CBB9]/60 flex items-center justify-center text-dark-slate text-xs">✓</span><span class="text-sm font-medium text-dark-slate">Supportive, gentle self-compassion first</span></div></div><a class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-dark-slate text-white text-sm font-semibold hover:bg-dark-slate/90 hover:scale-[1.02] transition-all shadow-sm" href="#"><img src="./assets/mibi-wave.png" alt="mibi" class="w-5 h-5 rounded-full object-cover"><span>Chat with Mibi</span><span class="text-xs">↗</span></a></div><div class="lg:col-span-6"><div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#EFEBE4] shadow-md"><div class="flex items-center justify-between pb-4 mb-5 border-b border-[#FAF8F5]"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full overflow-hidden bg-[#F5DCD4] flex items-center justify-center shadow-xs"><img src="./assets/mibi-wave.png" alt="Mibi" class="w-9 h-9 object-cover"></div><div><h5 class="text-sm font-bold text-dark-slate">Ask Mibi</h5><span class="text-[11px] text-dark-slate/60 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-sage-green"></span> Always here · Gentle Tone</span></div></div><span class="text-[11px] font-semibold text-dark-slate/60 px-2.5 py-1 rounded-full bg-[#FAF8F5]">Calm Space</span></div><div class="flex justify-start mb-4"><div class="bg-[#FAF8F5] text-dark-slate text-xs sm:text-sm rounded-2xl rounded-tl-xs px-4 py-3.5 max-w-[90%] leading-relaxed border border-[#EFEBE4]"><span class="block text-[11px] font-bold text-secondary uppercase tracking-wider mb-1">Mibi Welcome</span>Hi, I'm Mibi! Here to help you explore your thoughts, understand your preferences, and discover new perspectives. What would you like to talk about?</div></div><div class="flex justify-end mb-4"><div class="bg-dark-slate text-white text-xs sm:text-sm rounded-2xl rounded-tr-xs px-4 py-3 max-w-[85%] leading-relaxed">How can I explain my need for quiet recharge time to my colleagues without sounding distant?</div></div><div class="flex flex-wrap gap-2 pt-2"><button class="text-xs px-3 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#F5DCD4] text-dark-slate/80 font-medium transition-colors" type="button">Exploring my energy</button><button class="text-xs px-3 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#F5DCD4] text-dark-slate/80 font-medium transition-colors" type="button">Setting gentle boundaries</button><button class="text-xs px-3 py-1.5 rounded-full bg-[#FAF8F5] hover:bg-[#DCD6EC] text-dark-slate/80 font-medium transition-colors" type="button">Understanding my type</button></div></div></div></div></div></section>
-</main>
-<!-- Serene Footer (Matching requested languages, branding, & medical disclaimer) -->
-<footer class="w-full bg-white border-t border-[#EFEBE4] mt-12">
-<div class="max-w-[1340px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-[#FAF8F5]">
-<!-- Brand Info -->
-<div class="md:col-span-5"><div class="flex items-center gap-3 mb-4"><div class="w-9 h-9 rounded-xl bg-[#F5DCD4] overflow-hidden flex items-center justify-center text-dark-slate shadow-xs"><img src="./assets/mibi-wave.png" alt="mibi" class="w-8 h-8 object-cover"></div><span class="text-xl font-bold tracking-tight text-dark-slate lowercase">mibi<span class="text-muted-rose">.</span></span></div><p class="text-sm text-dark-slate/75 leading-relaxed max-w-sm mb-4">A gentle, contemplative atmosphere engineered to slow the rhythm of self-reflection, offering warm psychological perspectives and self-discovery.</p><p class="text-xs text-dark-slate/60">A little more you, every day.</p></div>
-<!-- Links Columns -->
-<div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
-<div>
-<h5 class="text-xs font-bold uppercase tracking-wider text-dark-slate mb-3">Discovery</h5>
-<ul class="space-y-2 text-dark-slate/70">
-<li><a class="hover:text-dark-slate transition-colors" href="#">Explore Types</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Methodology</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">AI Companion</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Journal</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-xs font-bold uppercase tracking-wider text-dark-slate mb-3">Reflective Space</h5>
-<ul class="space-y-2 text-dark-slate/70">
-<li><a class="hover:text-dark-slate transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Terms of Service</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Accessibility</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Contact</a></li>
-</ul>
-</div>
-<div>
-<h5 class="text-xs font-bold uppercase tracking-wider text-dark-slate mb-3">Languages</h5>
-<ul class="space-y-2 text-dark-slate/70">
-<li><a class="hover:text-dark-slate transition-colors" href="#">Global Translations</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Cultural Contexts</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">Quiet Principles</a></li>
-<li><a class="hover:text-dark-slate transition-colors" href="#">About Us</a></li>
-</ul>
-</div>
-</div>
-</div>
-<!-- Language Badges Bar (10 Languages: EN, HI, ID, FIL, MY, TH, VI, RU, PT, ES) -->
-<div class="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-<div class="flex flex-wrap items-center justify-center gap-1.5 text-xs font-semibold text-dark-slate/80">
-<span class="text-dark-slate/50 mr-2">Available in:</span>
-<span class="px-2.5 py-1 rounded-full bg-[#FAF8F5] border border-border-subtle text-dark-slate">English (EN)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">हिन्दी (HI)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Bahasa Indonesia (ID)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Filipino (FIL)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">မြန်မာ (MY)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">ไทย (TH)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Tiếng Việt (VI)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Русский (RU)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Português (PT)</span>
-<span class="px-2.5 py-1 rounded-full bg-white hover:bg-[#FAF8F5] border border-border-subtle cursor-pointer">Español (ES)</span>
-</div>
-<p class="text-xs text-dark-slate/60">© 2025 Mibi. All gentle rights reserved.</p>
-</div>
-<!-- Medical / Disclaimer -->
-<div class="pt-4 border-t border-[#FAF8F5] text-center">
-<p class="text-xs text-dark-slate/60 leading-relaxed italic max-w-3xl mx-auto">mibi is an independent, introspective self-discovery experience designed for personal curiosity and self-compassion. It is not affiliated with the Myers &amp; Briggs Foundation and is not intended for clinical diagnosis.</p>
-</div>
-</div>
-</footer>
-<!-- Simple Tab Interactivity for 16 Types Grid -->
+:root{--bg:#faf8f5;--hero:#f5dcd4;--ink:#343b43;--muted:#686e74;--line:#efebe4;--lav:#dcd6ec;--sage:#b7cbb9;--rose:#d9a8a9;--white:#fff}
+:root[data-theme="violet"]{--bg:#f9f7fd;--hero:#e9e2f7;--line:#e8e1f2;--rose:#b9a1d4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1340px;margin:auto;padding:0 28px}.header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(16px);z-index:10;border-bottom:1px solid var(--line)}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-size:27px;font-weight:800;letter-spacing:-1.5px}.brand img{height:44px;width:44px;object-fit:cover;border-radius:15px;background:var(--hero)}.brand b{color:var(--rose)}.links{display:flex;gap:26px;font-size:14px;font-weight:600}.links a:hover,.footer a:hover{opacity:.6}.actions{display:flex;align-items:center;gap:10px}.select,.theme{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);padding:10px 13px;font-size:12px;font-weight:700}.theme{white-space:nowrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--ink);color:white;border:0;border-radius:999px;padding:15px 25px;font-size:14px;font-weight:700;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn.alt{background:#fff;color:var(--ink)}.hero{margin:24px 0 38px;padding:65px 65px;background:var(--hero);border-radius:30px;display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:48px;overflow:hidden;position:relative}.eyebrow{display:inline-block;background:#ffffffb8;padding:7px 16px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.07em}.hero h1{font-size:clamp(36px,4.5vw,65px);line-height:1.12;letter-spacing:-.055em;margin:24px 0 18px;max-width:690px}.hero p{font-size:17px;max-width:540px;color:#555e65}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}.pill{border-radius:16px;background:#ffffff9c;padding:12px 17px;font-size:12px;font-weight:700}.pill:nth-child(1){background:#dcd6ec}.pill:nth-child(2){background:#b7cbb9}.mascot{background:#ffffffbb;border:15px solid #ffffff80;border-radius:30px;box-shadow:0 16px 32px #343b4315;padding:10px;max-width:390px;margin:auto}.mascot img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:19px}.mascot small{display:block;padding:12px 8px 2px;font-weight:700}.section{padding:45px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 30px}.section-head h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.2;margin:10px 0}.section-head p{color:var(--muted)}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.benefit,.type{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px}.benefit h3,.type h3{margin:12px 0 8px;font-size:18px}.benefit p,.type p{font-size:13px;color:var(--muted);margin:0}.symbol{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:var(--lav);font-size:22px}.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}.filter{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-size:12px;font-weight:700;color:var(--ink)}.filter.active{background:var(--ink);color:#fff}.type{background:#e9e3f5}.type:nth-child(4n + 2){background:#d8e5d9}.type:nth-child(4n + 3){background:#f6dfd6}.type:nth-child(4n + 4){background:#f0dfe3}.type strong{font-size:23px}.type .tag{float:right;font-size:11px;background:#ffffffaa;padding:4px 9px;border-radius:20px}.type a{display:inline-block;font-size:12px;font-weight:800;margin-top:14px}.companion{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:28px;padding:45px}.companion h2{font-size:38px;letter-spacing:-.04em;margin:8px 0}.companion p{color:var(--muted)}.chat{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:24px}.bubble{background:white;border-radius:18px;padding:16px;margin:12px 0;font-size:14px;max-width:90%}.bubble.user{background:var(--ink);color:white;margin-left:auto}.footer{background:#fff;border-top:1px solid var(--line);padding:40px 0;margin-top:55px}.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}.footer p{max-width:480px;color:var(--muted);font-size:12px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;font-weight:700}.notice{font-size:11px;color:var(--muted);margin-top:24px}.mobile-menu{display:none}.hidden{display:none!important}
+@media(max-width:1050px){.links{gap:12px}.grid4{grid-template-columns:repeat(2,1fr)}.hero{padding:40px;gap:20px}}@media(max-width:760px){.wrap{padding:0 16px}.nav{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.links{order:3;width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:8px}.actions{margin-left:auto}.actions .btn{display:none}.select,.theme{padding:8px}.hero{grid-template-columns:1fr;padding:32px 22px;text-align:center}.hero p{margin:auto}.cta,.pills{justify-content:center}.mascot{max-width:310px}.grid4{grid-template-columns:1fr 1fr}.benefit,.type{padding:17px}.companion{grid-template-columns:1fr;padding:24px}.section{padding:30px 0}}@media(max-width:420px){.grid4{grid-template-columns:1fr}.brand{font-size:23px}.brand img{height:36px;width:36px}.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="wrap nav"><a class="brand" href="./index.html"><img src="./assets/mibi-wave.png" alt="Mibi mascot"><span>mibi<b>.</b></span></a><nav class="links" aria-label="Main navigation"><a href="./index.html" data-i18n="navDiscover">Discover</a><a href="#types" data-i18n="navTypes">Personality Types</a><a href="./how-it-works.html" data-i18n="navHow">How It Works</a><a href="./ask-mibi.html">Ask Mibi</a><a href="./about.html" data-i18n="navAbout">About</a></nav><div class="actions"><select class="select" id="language" aria-label="Language"><option value="en">English</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="my">မြန်မာ</option><option value="th">ไทย</option><option value="hi">हिन्दी</option><option value="fil">Filipino</option><option value="ru">Русский</option><option value="pt">Português</option><option value="es">Español</option></select><button class="theme" id="themeToggle" type="button" aria-label="Change color theme">☾ Violet</button><a class="btn" href="./assessment.html" data-i18n="discoverType">Discover Your Type ↗</a></div></div></header>
+<main><div class="wrap"><section class="hero"><div><span class="eyebrow" data-i18n="eyebrow">A LITTLE MORE YOU, EVERY DAY</span><h1 data-i18n="heroTitle">A little more you, every day.</h1><p data-i18n="heroDesc">Discover the way you think, connect, and grow. Your journey of self-discovery starts here.</p><div class="cta"><a class="btn" href="./assessment.html" data-i18n="discoverType">Discover Your Type ↗</a><a class="btn alt" href="./ask-mibi.html" data-i18n="meetMibi">Meet Mibi ●</a></div><div class="pills"><span class="pill" data-i18n="vibe">VIBE · Calm & Gentle</span><span class="pill">GUIDE · Mibi AI</span><span class="pill">FORMAT · 16 Archetypes</span></div></div><div class="mascot"><img src="./assets/mibi-wave.png" alt="Mibi waving"><small data-i18n="mascotCaption">● Mibi is waving hello!</small></div></section>
+<section class="section"><div class="grid4"><article class="benefit"><div class="symbol">✧</div><h3 data-i18n="benefit1">Understand yourself</h3><p data-i18n="benefit1desc">Explore how you think, feel, and recharge.</p></article><article class="benefit"><div class="symbol" style="background:#f5dcd4">♡</div><h3 data-i18n="benefit2">Connect better</h3><p data-i18n="benefit2desc">Understand communication and relationships.</p></article><article class="benefit"><div class="symbol" style="background:#b7cbb9">☀</div><h3 data-i18n="benefit3">Discover your strengths</h3><p data-i18n="benefit3desc">Notice what makes your perspective unique.</p></article><article class="benefit"><div class="symbol" style="background:#f4cfbe">❀</div><h3 data-i18n="benefit4">Grow at your own pace</h3><p data-i18n="benefit4desc">Reflect without pressure or judgment.</p></article></div></section>
+<section class="section" id="types"><div class="section-head"><span class="eyebrow" data-i18n="typesLabel">THE 16 ARCHETYPES</span><h2 data-i18n="typesTitle">Explore the Four Temperament Families</h2><p data-i18n="typesDesc">Every personality brings a different way of seeing the world.</p></div><div class="filters" id="filters"><button class="filter active" data-category="all">All 16 Types</button><button class="filter" data-category="NT">Visionaries (NT)</button><button class="filter" data-category="NF">Harmony Keepers (NF)</button><button class="filter" data-category="SJ">Grounded Anchors (SJ)</button><button class="filter" data-category="SP">Spontaneous Explorers (SP)</button></div><div class="grid4" id="typesGrid"></div></section>
+<section class="section"><div class="companion"><div><span class="eyebrow" data-i18n="aiLabel">GENTLE SELF-DISCOVERY AI</span><h2>Ask Mibi</h2><p data-i18n="aiDesc">A calm space to explore your thoughts, reflect on your personality, and discover new perspectives.</p><a class="btn" href="./ask-mibi.html" data-i18n="chatNow">Chat with Mibi ↗</a></div><div class="chat"><strong>● Ask Mibi</strong><div class="bubble" data-i18n="chatGreeting">Hi, I'm Mibi! What would you like to explore today?</div><div class="bubble user" data-i18n="chatQuestion">How can I understand my personality better?</div></div></div></section></div></main>
+<footer class="footer"><div class="wrap"><div class="footer-inner"><div><a class="brand" href="./index.html"><img src="./assets/mibi-wave.png" alt="Mibi"><span>mibi<b>.</b></span></a><p data-i18n="footerDesc">A little more you, every day. A gentle place for personality discovery and reflection.</p></div><div class="footer-links"><a href="./assessment.html">Assessment</a><a href="./how-it-works.html">How It Works</a><a href="./ask-mibi.html">Ask Mibi</a><a href="./about.html">About</a></div></div><p class="notice">© 2026 Mibi. Independent self-discovery experience; not a clinical assessment or diagnosis. Not affiliated with the Myers & Briggs Foundation.</p></div></footer>
 <script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.personality-card');
-
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Reset button states
-        filterButtons.forEach(btn => {
-          btn.classList.remove('bg-dark-slate', 'text-white');
-          btn.classList.add('bg-white', 'text-dark-slate/80');
-        });
-
-        // Activate clicked button
-        button.classList.remove('bg-white', 'text-dark-slate/80');
-        button.classList.add('bg-dark-slate', 'text-white');
-
-        const target = button.getAttribute('data-target');
-
-        cards.forEach(card => {
-          if (target === 'all' || card.getAttribute('data-category') === target) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  </script>
-
-
-<script type="module" src="./js/home.js"></script></body></html>
+const types=[['INTJ','The Architect','NT'],['INTP','The Logician','NT'],['ENTJ','The Commander','NT'],['ENTP','The Debater','NT'],['INFJ','The Advocate','NF'],['INFP','The Mediator','NF'],['ENFJ','The Protagonist','NF'],['ENFP','The Campaigner','NF'],['ISTJ','The Logistician','SJ'],['ISFJ','The Defender','SJ'],['ESTJ','The Executive','SJ'],['ESFJ','The Consul','SJ'],['ISTP','The Virtuoso','SP'],['ISFP','The Adventurer','SP'],['ESTP','The Entrepreneur','SP'],['ESFP','The Entertainer','SP']];
+const grid=document.getElementById('typesGrid');types.forEach(([code,name,family])=>{const el=document.createElement('article');el.className='type';el.dataset.category=family;el.innerHTML=`<span class="tag">${family}</span><strong>${code}</strong><h3>${name}</h3><p>${family==='NT'?'Ideas, curiosity, and strategic thinking.':family==='NF'?'Values, empathy, and imagination.':family==='SJ'?'Stability, care, and responsibility.':'Adaptability, action, and exploration.'}</p><a href="./assessment.html">Discover your type ↗</a>`;grid.appendChild(el)});
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.type').forEach(c=>c.classList.toggle('hidden',b.dataset.category!=='all'&&c.dataset.category!==b.dataset.category))}));
+const translations={
+en:{navDiscover:'Discover',navTypes:'Personality Types',navHow:'How It Works',navAbout:'About',discoverType:'Discover Your Type ↗',eyebrow:'A LITTLE MORE YOU, EVERY DAY',heroTitle:'A little more you, every day.',heroDesc:'Discover the way you think, connect, and grow. Your journey of self-discovery starts here.',meetMibi:'Meet Mibi ●',vibe:'VIBE · Calm & Gentle',mascotCaption:'● Mibi is waving hello!',benefit1:'Understand yourself',benefit1desc:'Explore how you think, feel, and recharge.',benefit2:'Connect better',benefit2desc:'Understand communication and relationships.',benefit3:'Discover your strengths',benefit3desc:'Notice what makes your perspective unique.',benefit4:'Grow at your own pace',benefit4desc:'Reflect without pressure or judgment.',typesLabel:'THE 16 ARCHETYPES',typesTitle:'Explore the Four Temperament Families',typesDesc:'Every personality brings a different way of seeing the world.',aiLabel:'GENTLE SELF-DISCOVERY AI',aiDesc:'A calm space to explore your thoughts, reflect on your personality, and discover new perspectives.',chatNow:'Chat with Mibi ↗',chatGreeting:"Hi, I'm Mibi! What would you like to explore today?",chatQuestion:'How can I understand my personality better?',footerDesc:'A little more you, every day. A gentle place for personality discovery and reflection.'},
+id:{navDiscover:'Jelajahi',navTypes:'Tipe Kepribadian',navHow:'Cara Kerjanya',navAbout:'Tentang Kami',discoverType:'Temukan Tipemu ↗',eyebrow:'KENALI DIRIMU, SETIAP HARI',heroTitle:'Kenali dirimu sedikit lebih baik, setiap hari.',heroDesc:'Temukan cara kamu berpikir, terhubung, dan berkembang. Perjalanan mengenal diri dimulai di sini.',meetMibi:'Kenalan dengan Mibi ●',vibe:'SUASANA · Tenang & Lembut',mascotCaption:'● Mibi menyapamu!',benefit1:'Kenali dirimu',benefit1desc:'Jelajahi cara kamu berpikir, merasa, dan mengisi energi.',benefit2:'Bangun hubungan lebih baik',benefit2desc:'Pahami komunikasi dan hubungan.',benefit3:'Temukan kelebihanmu',benefit3desc:'Kenali keunikan sudut pandangmu.',benefit4:'Bertumbuh dengan caramu',benefit4desc:'Refleksi tanpa tekanan atau penilaian.',typesLabel:'16 TIPE KEPRIBADIAN',typesTitle:'Jelajahi Empat Kelompok Kepribadian',typesDesc:'Setiap pribadi punya cara berbeda dalam melihat dunia.',aiLabel:'AI UNTUK MENGENAL DIRI',aiDesc:'Ruang yang nyaman untuk mengeksplorasi pikiran, merefleksikan kepribadian, dan menemukan perspektif baru.',chatNow:'Ngobrol dengan Mibi ↗',chatGreeting:'Hai, aku Mibi! Apa yang ingin kamu bahas hari ini?',chatQuestion:'Bagaimana aku bisa lebih memahami kepribadianku?',footerDesc:'Kenali dirimu sedikit lebih baik, setiap hari. Tempat nyaman untuk eksplorasi kepribadian dan refleksi.'},
+vi:{navDiscover:'Khám phá',navTypes:'Các kiểu tính cách',navHow:'Cách hoạt động',navAbout:'Giới thiệu',discoverType:'Khám phá tính cách ↗',eyebrow:'HIỂU THÊM VỀ BẢN THÂN MỖI NGÀY',heroTitle:'Hiểu thêm về bản thân, mỗi ngày.',heroDesc:'Khám phá cách bạn suy nghĩ, kết nối và phát triển. Hành trình hiểu bản thân bắt đầu từ đây.',meetMibi:'Gặp Mibi ●',vibe:'CẢM XÚC · Nhẹ nhàng',mascotCaption:'● Mibi đang chào bạn!',benefit1:'Hiểu bản thân',benefit1desc:'Khám phá cách bạn suy nghĩ, cảm nhận và nạp năng lượng.',benefit2:'Kết nối tốt hơn',benefit2desc:'Hiểu về giao tiếp và các mối quan hệ.',benefit3:'Khám phá thế mạnh',benefit3desc:'Nhận ra góc nhìn độc đáo của bạn.',benefit4:'Phát triển theo nhịp riêng',benefit4desc:'Suy ngẫm không áp lực hay phán xét.',typesLabel:'16 KIỂU TÍNH CÁCH',typesTitle:'Khám phá bốn nhóm tính cách',typesDesc:'Mỗi người có một cách nhìn thế giới khác nhau.',aiLabel:'AI ĐỒNG HÀNH KHÁM PHÁ BẢN THÂN',aiDesc:'Không gian nhẹ nhàng để khám phá suy nghĩ, tính cách và những góc nhìn mới.',chatNow:'Trò chuyện với Mibi ↗',chatGreeting:'Xin chào, mình là Mibi! Hôm nay bạn muốn khám phá điều gì?',chatQuestion:'Làm sao để hiểu rõ tính cách của mình hơn?',footerDesc:'Hiểu thêm về bản thân, mỗi ngày. Không gian khám phá tính cách và suy ngẫm.'},
+my:{heroTitle:'နေ့တိုင်း ကိုယ့်ကိုယ်ကို ပိုမိုသိရှိလာပါ။',heroDesc:'သင့်အတွေးအမြင်၊ ဆက်ဆံရေးနှင့် တိုးတက်မှုကို ရှာဖွေလေ့လာပါ။',discoverType:'သင့်စရိုက်ကို ရှာဖွေပါ ↗',meetMibi:'Mibi နှင့် တွေ့ဆုံပါ ●',navDiscover:'လေ့လာရန်',navTypes:'စရိုက်အမျိုးအစားများ',navHow:'လုပ်ဆောင်ပုံ',navAbout:'အကြောင်း',typesTitle:'စရိုက်အုပ်စု လေးမျိုးကို လေ့လာပါ',chatNow:'Mibi နှင့် စကားပြောပါ ↗'},
+th:{heroTitle:'รู้จักตัวเองมากขึ้นในทุกวัน',heroDesc:'ค้นพบวิธีคิด การเชื่อมโยง และการเติบโตของคุณ',discoverType:'ค้นหาบุคลิกของคุณ ↗',meetMibi:'พบกับ Mibi ●',navDiscover:'สำรวจ',navTypes:'ประเภทบุคลิกภาพ',navHow:'วิธีใช้งาน',navAbout:'เกี่ยวกับเรา',typesTitle:'สำรวจบุคลิกภาพทั้งสี่กลุ่ม',chatNow:'คุยกับ Mibi ↗'},
+hi:{heroTitle:'हर दिन खुद को थोड़ा और जानें।',heroDesc:'अपने सोचने, जुड़ने और आगे बढ़ने के तरीके को जानें।',discoverType:'अपना व्यक्तित्व जानें ↗',meetMibi:'Mibi से मिलें ●',navDiscover:'खोजें',navTypes:'व्यक्तित्व प्रकार',navHow:'यह कैसे काम करता है',navAbout:'हमारे बारे में',typesTitle:'चार व्यक्तित्व समूहों को जानें',chatNow:'Mibi से बात करें ↗'},
+fil:{heroTitle:'Mas kilalanin ang sarili, araw-araw.',heroDesc:'Tuklasin kung paano ka mag-isip, makipag-ugnayan, at umunlad.',discoverType:'Alamin ang Iyong Uri ↗',meetMibi:'Kilalanin si Mibi ●',navDiscover:'Tuklasin',navTypes:'Mga Uri ng Personalidad',navHow:'Paano Ito Gumagana',navAbout:'Tungkol',typesTitle:'Kilalanin ang Apat na Grupo ng Personalidad',chatNow:'Makipag-usap kay Mibi ↗'},
+ru:{heroTitle:'Каждый день узнавайте себя лучше.',heroDesc:'Узнайте, как вы мыслите, общаетесь и развиваетесь.',discoverType:'Узнать свой тип ↗',meetMibi:'Познакомиться с Mibi ●',navDiscover:'Открыть',navTypes:'Типы личности',navHow:'Как это работает',navAbout:'О нас',typesTitle:'Четыре группы темпераментов',chatNow:'Поговорить с Mibi ↗'},
+pt:{heroTitle:'Um pouco mais de você, todos os dias.',heroDesc:'Descubra como você pensa, se conecta e cresce.',discoverType:'Descubra seu tipo ↗',meetMibi:'Conheça Mibi ●',navDiscover:'Explorar',navTypes:'Tipos de personalidade',navHow:'Como funciona',navAbout:'Sobre',typesTitle:'Explore os quatro grupos de temperamento',chatNow:'Converse com Mibi ↗'},
+es:{heroTitle:'Un poco más de ti, cada día.',heroDesc:'Descubre cómo piensas, conectas y creces.',discoverType:'Descubre tu tipo ↗',meetMibi:'Conoce a Mibi ●',navDiscover:'Descubrir',navTypes:'Tipos de personalidad',navHow:'Cómo funciona',navAbout:'Acerca de',typesTitle:'Explora las cuatro familias de temperamento',chatNow:'Habla con Mibi ↗'}};
+const langSelect=document.getElementById('language');function applyLang(lang){const dict={...translations.en,...(translations[lang]||{})};document.querySelectorAll('[data-i18n]').forEach(el=>{const val=dict[el.dataset.i18n];if(val)el.textContent=val});document.documentElement.lang=lang;langSelect.value=lang;try{localStorage.setItem('mibi-lang',lang)}catch(e){}}
+langSelect.addEventListener('change',e=>applyLang(e.target.value));const themeBtn=document.getElementById('themeToggle');function applyTheme(theme){document.documentElement.dataset.theme=theme;themeBtn.textContent=theme==='violet'?'☀ Peach':'☾ Violet';try{localStorage.setItem('mibi-theme',theme)}catch(e){}}themeBtn.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='violet'?'peach':'violet'));try{applyLang(localStorage.getItem('mibi-lang')||'en');applyTheme(localStorage.getItem('mibi-theme')||'peach')}catch(e){applyLang('en');applyTheme('peach')}
+</script>
+</body></html>
