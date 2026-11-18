@@ -12,12 +12,147 @@
 :root[data-theme="violet"]{--bg:#f9f7fd;--hero:#e9e2f7;--line:#e8e1f2;--rose:#b9a1d4}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1340px;margin:auto;padding:0 28px}.header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(16px);z-index:10;border-bottom:1px solid var(--line)}.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-size:27px;font-weight:800;letter-spacing:-1.5px}.brand img{height:44px;width:44px;object-fit:cover;border-radius:15px;background:var(--hero)}.brand b{color:var(--rose)}.links{display:flex;gap:26px;font-size:14px;font-weight:600}.links a:hover,.footer a:hover{opacity:.6}.actions{display:flex;align-items:center;gap:10px}.select,.theme{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);padding:10px 13px;font-size:12px;font-weight:700}.theme{white-space:nowrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--ink);color:white;border:0;border-radius:999px;padding:15px 25px;font-size:14px;font-weight:700;transition:transform .2s}.btn:hover{transform:translateY(-2px)}.btn.alt{background:#fff;color:var(--ink)}.hero{margin:24px 0 38px;padding:65px 65px;background:var(--hero);border-radius:30px;display:grid;grid-template-columns:1.35fr 1fr;align-items:center;gap:48px;overflow:hidden;position:relative}.eyebrow{display:inline-block;background:#ffffffb8;padding:7px 16px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.07em}.hero h1{font-size:clamp(36px,4.5vw,65px);line-height:1.12;letter-spacing:-.055em;margin:24px 0 18px;max-width:690px}.hero p{font-size:17px;max-width:540px;color:#555e65}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}.pill{border-radius:16px;background:#ffffff9c;padding:12px 17px;font-size:12px;font-weight:700}.pill:nth-child(1){background:#dcd6ec}.pill:nth-child(2){background:#b7cbb9}.mascot{background:#ffffffbb;border:15px solid #ffffff80;border-radius:30px;box-shadow:0 16px 32px #343b4315;padding:10px;max-width:390px;margin:auto}.mascot img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:19px}.mascot small{display:block;padding:12px 8px 2px;font-weight:700}.section{padding:45px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 30px}.section-head h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.2;margin:10px 0}.section-head p{color:var(--muted)}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.benefit,.type{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px}.benefit h3,.type h3{margin:12px 0 8px;font-size:18px}.benefit p,.type p{font-size:13px;color:var(--muted);margin:0}.symbol{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:var(--lav);font-size:22px}.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:24px}.filter{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 15px;font-size:12px;font-weight:700;color:var(--ink)}.filter.active{background:var(--ink);color:#fff}.type{background:#e9e3f5}.type:nth-child(4n + 2){background:#d8e5d9}.type:nth-child(4n + 3){background:#f6dfd6}.type:nth-child(4n + 4){background:#f0dfe3}.type strong{font-size:23px}.type .tag{float:right;font-size:11px;background:#ffffffaa;padding:4px 9px;border-radius:20px}.type a{display:inline-block;font-size:12px;font-weight:800;margin-top:14px}.companion{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:28px;padding:45px}.companion h2{font-size:38px;letter-spacing:-.04em;margin:8px 0}.companion p{color:var(--muted)}.chat{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:24px}.bubble{background:white;border-radius:18px;padding:16px;margin:12px 0;font-size:14px;max-width:90%}.bubble.user{background:var(--ink);color:white;margin-left:auto}.footer{background:#fff;border-top:1px solid var(--line);padding:40px 0;margin-top:55px}.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}.footer p{max-width:480px;color:var(--muted);font-size:12px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;font-weight:700}.notice{font-size:11px;color:var(--muted);margin-top:24px}.mobile-menu{display:none}.hidden{display:none!important}
 @media(max-width:1050px){.links{gap:12px}.grid4{grid-template-columns:repeat(2,1fr)}.hero{padding:40px;gap:20px}}@media(max-width:760px){.wrap{padding:0 16px}.nav{flex-wrap:wrap;padding-top:12px;padding-bottom:12px}.links{order:3;width:100%;overflow-x:auto;white-space:nowrap;padding-bottom:8px}.actions{margin-left:auto}.actions .btn{display:none}.select,.theme{padding:8px}.hero{grid-template-columns:1fr;padding:32px 22px;text-align:center}.hero p{margin:auto}.cta,.pills{justify-content:center}.mascot{max-width:310px}.grid4{grid-template-columns:1fr 1fr}.benefit,.type{padding:17px}.companion{grid-template-columns:1fr;padding:24px}.section{padding:30px 0}}@media(max-width:420px){.grid4{grid-template-columns:1fr}.brand{font-size:23px}.brand img{height:36px;width:36px}.hero h1{font-size:36px}}
+.products .section-head { margin-bottom: 3.5rem; }
+.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 155px 18px 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  text-align: center;
+  background: linear-gradient(to bottom, var(--tint), var(--bg) 82%);
+}
+.product-card--self { --tint: #ece4f7; }
+.product-card--heart { --tint: #f7e2e3; }
+.product-card--detox { --tint: #e3ebdf; }
+.product-art {
+  position: absolute;
+  width: 230px;
+  max-width: 100%;
+  top: -84px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(2px 11px 8px rgb(63 41 48 / 20%));
+  pointer-events: none;
+}
+.product-art img { display: block; width: 100%; height: auto; }
+.product-card h3 { font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.3; margin: 0 0 8px; }
+.product-card p { margin: 0 0 14px; color: var(--muted); }
+.product-card .product-action {
+  margin-top: auto;
+  font-size: .88rem;
+  font-weight: 700;
+}
+a.product-action { text-decoration: underline; text-underline-offset: 3px; }
+@media(max-width: 720px) {
+  .product-grid { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+}
+
+.product-card--self img {
+  clip-path: polygon(51.52% 37.40%, 52.31% 33.97%, 44.74% 29.82%, 49.68% 27.19%, 53.11% 31.90%, 59.09% 28.79%, 61.80% 32.30%, 53.75% 34.13%, 53.03% 37.48%, 69.78% 56.14%, 71.85% 65.87%, 71.37% 70.10%, 66.59% 80.14%, 66.43% 87.48%, 61.64% 91.07%, 54.39% 91.63%, 52.55% 91.55%, 35.41% 90.67%, 28.55% 87.56%, 33.57% 80.30%, 27.91% 68.74%, 30.62% 52.39%, 51.52% 37.40%);
+  clip-path: shape(from 51.52% 37.40%,
+    curve to 52.31% 33.97% with 51.75% 35.57% / 52.07% 34.61%,
+    curve to 44.74% 29.82% with 49.28% 33.73% / 45.93% 32.38%,
+    curve to 49.68% 27.19% with 43.30% 26.87% / 46.89% 25.92%,
+    curve to 53.11% 31.90% with 51.67% 27.99% / 52.63% 29.82%,
+    curve to 59.09% 28.79% with 54.94% 29.74% / 56.70% 28.63%,
+    curve to 61.80% 32.30% with 62.60% 29.03% / 63.80% 30.62%,
+    curve to 53.75% 34.13% with 59.65% 34.05% / 57.10% 34.61%,
+    curve to 53.03% 37.48% with 53.35% 35.09% / 53.11% 36.36%,
+    curve to 69.78% 56.14% with 62.28% 38.12% / 68.10% 44.26%,
+    curve to 71.85% 65.87% with 70.41% 59.49% / 71.93% 62.60%,
+    curve to 71.37% 70.10% with 71.77% 67.15% / 71.37% 68.34%,
+    curve to 66.59% 80.14% with 72.33% 75.84% / 69.70% 79.19%,
+    curve to 66.43% 87.48% with 68.26% 81.74% / 67.86% 83.73%,
+    curve to 61.64% 91.07% with 65.31% 90.35% / 64.27% 91.07%,
+    curve to 54.39% 91.63% with 58.85% 91.39% / 56.54% 91.47%,
+    curve to 52.55% 91.55% with 53.35% 92.82% / 51.59% 92.74%,
+    curve to 35.41% 90.67% with 47.69% 91.55% / 40.51% 91.07%,
+    curve to 28.55% 87.56% with 31.34% 90.35% / 28.39% 89.79%,
+    curve to 33.57% 80.30% with 28.63% 85.49% / 32.06% 83.01%,
+    curve to 27.91% 68.74% with 28.63% 78.79% / 27.35% 73.84%,
+    curve to 30.62% 52.39% with 28.15% 64.11% / 29.74% 58.05%,
+    curve to 51.52% 37.40% with 33.33% 42.19% / 40.43% 37.64%, close);
+}
+
+.product-card--heart img {
+  clip-path: polygon(47.77% 45.30%, 46.81% 42.34%, 38.12% 39.39%, 41.87% 36.12%, 47.85% 40.11%, 53.83% 33.97%, 57.58% 36.28%, 49.52% 41.95%, 50.08% 45.37%, 68.90% 62.28%, 73.52% 71.77%, 71.77% 79.51%, 64.51% 89.95%, 35.41% 90.19%, 26.08% 76.56%, 27.91% 63.88%, 47.77% 45.30%);
+  clip-path: shape(from 47.77% 45.30%,
+    curve to 46.81% 42.34% with 47.85% 43.94% / 47.21% 43.06%,
+    curve to 38.12% 39.39% with 43.70% 42.90% / 39.63% 41.95%,
+    curve to 41.87% 36.12% with 36.76% 37.16% / 38.92% 35.89%,
+    curve to 47.85% 40.11% with 44.18% 36.12% / 46.49% 37.48%,
+    curve to 53.83% 33.97% with 49.04% 37.24% / 51.20% 34.93%,
+    curve to 57.58% 36.28% with 56.46% 33.09% / 58.45% 34.29%,
+    curve to 49.52% 41.95% with 56.38% 38.68% / 53.11% 40.99%,
+    curve to 50.08% 45.37% with 49.76% 42.98% / 49.92% 44.26%,
+    curve to 68.90% 62.28% with 60.21% 45.69% / 65.95% 52.15%,
+    curve to 73.52% 71.77% with 70.10% 65.71% / 71.61% 68.26%,
+    curve to 71.77% 79.51% with 75.12% 74.40% / 73.52% 77.83%,
+    curve to 64.51% 89.95% with 71.37% 85.65% / 68.58% 88.76%,
+    curve to 35.41% 90.19% with 60.05% 91.31% / 42.11% 91.39%,
+    curve to 26.08% 76.56% with 28.23% 88.84% / 25.92% 84.29%,
+    curve to 27.91% 63.88% with 26.08% 72.65% / 26.95% 68.02%,
+    curve to 47.77% 45.30% with 30.38% 52.71% / 35.33% 45.53%, close);
+}
+
+.product-card--detox img {
+  clip-path: polygon(48.72% 47.93%, 48.96% 44.58%, 39.39% 41.63%, 43.38% 38.44%, 50.00% 42.66%, 56.14% 36.68%, 60.85% 38.12%, 52.95% 44.18%, 51.20% 46.33%, 51.36% 47.93%, 68.42% 65.15%, 75.60% 65.47%, 72.41% 70.49%, 69.78% 73.60%, 69.22% 85.41%, 53.83% 91.55%, 34.05% 90.27%, 27.75% 77.67%, 27.99% 72.49%, 24.72% 68.90%, 25.36% 64.04%, 30.54% 63.88%, 48.72% 47.93%);
+  clip-path: shape(from 48.72% 47.93%,
+    curve to 48.96% 44.58% with 48.96% 46.57% / 49.28% 45.45%,
+    curve to 39.39% 41.63% with 45.22% 45.85% / 40.51% 43.86%,
+    curve to 43.38% 38.44% with 38.20% 39.55% / 40.99% 38.44%,
+    curve to 50.00% 42.66% with 45.93% 38.44% / 48.88% 39.79%,
+    curve to 56.14% 36.68% with 51.67% 40.03% / 53.59% 37.48%,
+    curve to 60.85% 38.12% with 58.53% 35.96% / 60.85% 36.28%,
+    curve to 52.95% 44.18% with 60.93% 40.51% / 56.94% 43.78%,
+    curve to 51.20% 46.33% with 51.52% 44.34% / 51.04% 44.82%,
+    curve to 51.36% 47.93% with 51.20% 46.97% / 51.28% 47.53%,
+    curve to 68.42% 65.15% with 59.33% 48.17% / 65.47% 54.31%,
+    curve to 75.60% 65.47% with 70.57% 62.84% / 74.32% 63.24%,
+    curve to 72.41% 70.49% with 77.19% 68.02% / 74.24% 69.22%,
+    curve to 69.78% 73.60% with 71.13% 71.37% / 70.49% 72.73%,
+    curve to 69.22% 85.41% with 70.65% 77.35% / 70.49% 81.98%,
+    curve to 53.83% 91.55% with 67.15% 91.39% / 60.37% 91.47%,
+    curve to 34.05% 90.27% with 48.01% 91.87% / 38.92% 91.63%,
+    curve to 27.75% 77.67% with 29.43% 88.44% / 27.51% 84.13%,
+    curve to 27.99% 72.49% with 27.75% 75.76% / 27.91% 74.00%,
+    curve to 24.72% 68.90% with 27.19% 70.73% / 26.24% 70.26%,
+    curve to 25.36% 64.04% with 22.89% 67.38% / 23.76% 65.15%,
+    curve to 30.54% 63.88% with 26.95% 62.92% / 28.87% 62.92%,
+    curve to 48.72% 47.93% with 32.78% 56.14% / 37.96% 48.48%, close);
+}
 </style>
 </head>
 <body>
 <header class="header"><div class="wrap nav"><a class="brand" href="./index.html"><img src="./assets/mibi-wave.png" alt="Mibi mascot"><span>mibi<b>.</b></span></a><nav class="links" aria-label="Main navigation"><a href="./index.html" data-i18n="navDiscover">Discover</a><a href="#types" data-i18n="navTypes">Personality Types</a><a href="./how-it-works.html" data-i18n="navHow">How It Works</a><a href="./ask-mibi.html">Ask Mibi</a><a href="./about.html" data-i18n="navAbout">About</a></nav><div class="actions"><select class="select" id="language" aria-label="Language"><option value="en">English</option><option value="id">Bahasa Indonesia</option><option value="vi">Tiếng Việt</option><option value="my">မြန်မာ</option><option value="th">ไทย</option><option value="hi">हिन्दी</option><option value="fil">Filipino</option><option value="ru">Русский</option><option value="pt">Português</option><option value="es">Español</option></select><button class="theme" id="themeToggle" type="button" aria-label="Change color theme">☾ Violet</button><a class="btn" href="./assessment.html" data-i18n="discoverType">Discover Your Type ↗</a></div></div></header>
 <main><div class="wrap"><section class="hero"><div><span class="eyebrow" data-i18n="eyebrow">A LITTLE MORE YOU, EVERY DAY</span><h1 data-i18n="heroTitle">A little more you, every day.</h1><p data-i18n="heroDesc">Discover the way you think, connect, and grow. Your journey of self-discovery starts here.</p><div class="cta"><a class="btn" href="./assessment.html" data-i18n="discoverType">Discover Your Type ↗</a><a class="btn alt" href="./ask-mibi.html" data-i18n="meetMibi">Meet Mibi ●</a></div><div class="pills"><span class="pill" data-i18n="vibe">VIBE · Calm & Gentle</span><span class="pill">GUIDE · Mibi AI</span><span class="pill">FORMAT · 16 Archetypes</span></div></div><div class="mascot"><img src="./assets/mibi-wave.png" alt="Mibi waving"><small data-i18n="mascotCaption">● Mibi is waving hello!</small></div></section>
-<section class="section"><div class="grid4"><article class="benefit"><div class="symbol">✧</div><h3 data-i18n="benefit1">Understand yourself</h3><p data-i18n="benefit1desc">Explore how you think, feel, and recharge.</p></article><article class="benefit"><div class="symbol" style="background:#f5dcd4">♡</div><h3 data-i18n="benefit2">Connect better</h3><p data-i18n="benefit2desc">Understand communication and relationships.</p></article><article class="benefit"><div class="symbol" style="background:#b7cbb9">☀</div><h3 data-i18n="benefit3">Discover your strengths</h3><p data-i18n="benefit3desc">Notice what makes your perspective unique.</p></article><article class="benefit"><div class="symbol" style="background:#f4cfbe">❀</div><h3 data-i18n="benefit4">Grow at your own pace</h3><p data-i18n="benefit4desc">Reflect without pressure or judgment.</p></article></div></section>
+<section class="section products" id="products" aria-labelledby="products-heading">
+  <div class="section-head"><h2 id="products-heading" data-i18n="productHeading">What’s on your mind?</h2></div>
+  <div class="product-grid">
+    <article class="product-card product-card--self">
+      <div class="product-art"><img src="./assets/product-self.png" width="1254" height="1254" alt="" loading="lazy" decoding="async"></div>
+      <h3 data-i18n="selfTitle">Figuring Myself Out</h3>
+      <p data-i18n="selfDesc">Explore your personality and what makes you tick.</p>
+      <a class="product-action" href="./assessment.html" data-i18n="productStart">Take the personality test</a>
+    </article>
+    <article class="product-card product-card--heart">
+      <div class="product-art"><img src="./assets/product-heart.png" width="1254" height="1254" alt="" loading="lazy" decoding="async"></div>
+      <h3 data-i18n="heartTitle">Getting Over My Toxic Ex</h3>
+      <p data-i18n="heartDesc">Make sense of what happened and find your footing again.</p>
+      <span class="product-action" data-i18n="productSoon">Coming soon</span>
+    </article>
+    <article class="product-card product-card--detox">
+      <div class="product-art"><img src="./assets/product-detox.png" width="1254" height="1254" alt="" loading="lazy" decoding="async"></div>
+      <h3 data-i18n="detoxTitle">Mind Detox</h3>
+      <p data-i18n="detoxDesc">Take a breather, protect your peace, and recharge.</p>
+      <span class="product-action" data-i18n="productSoon">Coming soon</span>
+    </article>
+  </div>
+</section>
 <section class="section" id="types"><div class="section-head"><span class="eyebrow" data-i18n="typesLabel">THE 16 ARCHETYPES</span><h2 data-i18n="typesTitle">Explore the Four Temperament Families</h2><p data-i18n="typesDesc">Every personality brings a different way of seeing the world.</p></div><div class="filters" id="filters"><button class="filter active" data-category="all">All 16 Types</button><button class="filter" data-category="NT">Visionaries (NT)</button><button class="filter" data-category="NF">Harmony Keepers (NF)</button><button class="filter" data-category="SJ">Grounded Anchors (SJ)</button><button class="filter" data-category="SP">Spontaneous Explorers (SP)</button></div><div class="grid4" id="typesGrid"></div></section>
 <section class="section"><div class="companion"><div><span class="eyebrow" data-i18n="aiLabel">GENTLE SELF-DISCOVERY AI</span><h2>Ask Mibi</h2><p data-i18n="aiDesc">A calm space to explore your thoughts, reflect on your personality, and discover new perspectives.</p><a class="btn" href="./ask-mibi.html" data-i18n="chatNow">Chat with Mibi ↗</a></div><div class="chat"><strong>● Ask Mibi</strong><div class="bubble" data-i18n="chatGreeting">Hi, I'm Mibi! What would you like to explore today?</div><div class="bubble user" data-i18n="chatQuestion">How can I understand my personality better?</div></div></div></section></div></main>
 <footer class="footer"><div class="wrap"><div class="footer-inner"><div><a class="brand" href="./index.html"><img src="./assets/mibi-wave.png" alt="Mibi"><span>mibi<b>.</b></span></a><p data-i18n="footerDesc">A little more you, every day. A gentle place for personality discovery and reflection.</p></div><div class="footer-links"><a href="./assessment.html">Assessment</a><a href="./how-it-works.html">How It Works</a><a href="./ask-mibi.html">Ask Mibi</a><a href="./about.html">About</a></div></div><div class="footer-languages" style="border-top:1px solid var(--line);margin-top:28px;padding-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted);margin-right:8px">Available in:</span><button type="button" data-lang="en">English (EN)</button><button type="button" data-lang="hi">हिन्दी (HI)</button><button type="button" data-lang="id">Bahasa Indonesia (ID)</button><button type="button" data-lang="fil">Filipino (FIL)</button><button type="button" data-lang="my">မြန်မာ (MY)</button><button type="button" data-lang="th">ไทย (TH)</button><button type="button" data-lang="vi">Tiếng Việt (VI)</button><button type="button" data-lang="ru">Русский (RU)</button><button type="button" data-lang="pt">Português (PT)</button><button type="button" data-lang="es">Español (ES)</button></div><style>.footer-languages button{background:#faf8f5;border:1px solid #efebe4;border-radius:999px;padding:7px 11px;font-size:11px;color:#343b43;cursor:pointer}.footer-languages button:hover,.footer-languages button[aria-pressed="true"]{background:#dcd6ec;border-color:#b7cbb9}</style><script>document.querySelectorAll('.footer-languages button').forEach(b=>b.addEventListener('click',()=>{const sel=document.getElementById('language');sel.value=b.dataset.lang;sel.dispatchEvent(new Event('change'));document.querySelectorAll('.footer-languages button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));window.scrollTo({top:0,behavior:'smooth'});}));</script><p class="notice">© 2026 Mibi. Independent self-discovery experience; not a clinical assessment or diagnosis. Not affiliated with the Myers & Briggs Foundation.</p></div></footer>
@@ -36,7 +171,119 @@ fil:{heroTitle:'Mas kilalanin ang sarili, araw-araw.',heroDesc:'Tuklasin kung pa
 ru:{heroTitle:'Каждый день узнавайте себя лучше.',heroDesc:'Узнайте, как вы мыслите, общаетесь и развиваетесь.',discoverType:'Узнать свой тип ↗',meetMibi:'Познакомиться с Mibi ●',navDiscover:'Открыть',navTypes:'Типы личности',navHow:'Как это работает',navAbout:'О нас',typesTitle:'Четыре группы темпераментов',chatNow:'Поговорить с Mibi ↗'},
 pt:{heroTitle:'Um pouco mais de você, todos os dias.',heroDesc:'Descubra como você pensa, se conecta e cresce.',discoverType:'Descubra seu tipo ↗',meetMibi:'Conheça Mibi ●',navDiscover:'Explorar',navTypes:'Tipos de personalidade',navHow:'Como funciona',navAbout:'Sobre',typesTitle:'Explore os quatro grupos de temperamento',chatNow:'Converse com Mibi ↗'},
 es:{heroTitle:'Un poco más de ti, cada día.',heroDesc:'Descubre cómo piensas, conectas y creces.',discoverType:'Descubre tu tipo ↗',meetMibi:'Conoce a Mibi ●',navDiscover:'Descubrir',navTypes:'Tipos de personalidad',navHow:'Cómo funciona',navAbout:'Acerca de',typesTitle:'Explora las cuatro familias de temperamento',chatNow:'Habla con Mibi ↗'}};
-const langSelect=document.getElementById('language');function applyLang(lang){const dict={...translations.en,...(translations[lang]||{})};document.querySelectorAll('[data-i18n]').forEach(el=>{const val=dict[el.dataset.i18n];if(val)el.textContent=val});document.documentElement.lang=lang;langSelect.value=lang;try{localStorage.setItem('mibi-lang',lang)}catch(e){}}
+const productTranslations = {
+  "en": {
+    "productHeading": "What’s on your mind?",
+    "selfTitle": "Figuring Myself Out",
+    "selfDesc": "Explore your personality and what makes you tick.",
+    "heartTitle": "Getting Over My Toxic Ex",
+    "heartDesc": "Make sense of what happened and find your footing again.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Take a breather, protect your peace, and recharge.",
+    "productStart": "Take the personality test",
+    "productSoon": "Coming soon"
+  },
+  "id": {
+    "productHeading": "Apa yang lagi kamu pikirin?",
+    "selfTitle": "Mengenal Diri Sendiri",
+    "selfDesc": "Kenali kepribadianmu dan hal-hal yang bikin kamu jadi dirimu.",
+    "heartTitle": "Move On dari Mantan Toxic",
+    "heartDesc": "Pahami apa yang terjadi dan pelan-pelan bangkit lagi.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Tarik napas, jaga ketenanganmu, dan isi ulang energi.",
+    "productStart": "Ikuti tes kepribadian",
+    "productSoon": "Segera hadir"
+  },
+  "vi": {
+    "productHeading": "Bạn đang nghĩ gì?",
+    "selfTitle": "Hiểu hơn về bản thân",
+    "selfDesc": "Khám phá tính cách và những điều tạo nên bạn.",
+    "heartTitle": "Vượt qua người yêu cũ độc hại",
+    "heartDesc": "Nhìn lại chuyện đã qua và dần lấy lại cân bằng.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Nghỉ một chút để tìm lại sự bình yên và nạp năng lượng.",
+    "productStart": "Làm bài trắc nghiệm tính cách",
+    "productSoon": "Sắp ra mắt"
+  },
+  "my": {
+    "productHeading": "အခု ဘာတွေ စိတ်ထဲရှိနေလဲ။",
+    "selfTitle": "ကိုယ့်ကိုယ်ကို ပိုနားလည်ဖို့",
+    "selfDesc": "ကိုယ့်စရိုက်နဲ့ ကိုယ့်အကြောင်း ပိုသိလာဖို့။",
+    "heartTitle": "ရည်းစားဟောင်းကို မေ့နိုင်ဖို့",
+    "heartDesc": "ဖြစ်ခဲ့တာတွေကို နားလည်ပြီး ဖြည်းဖြည်းချင်း ရှေ့ဆက်ဖို့။",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "ခဏနားပြီး စိတ်အေးအေးနဲ့ အားပြန်ဖြည့်ဖို့။",
+    "productStart": "ကိုယ်ရည်ကိုယ်သွေး စစ်တမ်းဖြေမယ်",
+    "productSoon": "မကြာမီ လာမည်"
+  },
+  "th": {
+    "productHeading": "วันนี้คิดอะไรอยู่?",
+    "selfTitle": "ทำความรู้จักตัวเอง",
+    "selfDesc": "สำรวจบุคลิกและสิ่งที่ทำให้คุณเป็นคุณ",
+    "heartTitle": "ก้าวผ่านแฟนเก่าที่เป็นพิษ",
+    "heartDesc": "ทบทวนสิ่งที่เกิดขึ้นแล้วค่อย ๆ ตั้งหลักใหม่",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "พักสักหน่อย ให้ใจได้สงบและเติมพลัง",
+    "productStart": "ทำแบบทดสอบบุคลิกภาพ",
+    "productSoon": "เร็ว ๆ นี้"
+  },
+  "hi": {
+    "productHeading": "आज आपके मन में क्या है?",
+    "selfTitle": "खुद को समझना",
+    "selfDesc": "अपने व्यक्तित्व और अपनी पसंद-नापसंद को जानें।",
+    "heartTitle": "पुराने रिश्ते से आगे बढ़ना",
+    "heartDesc": "जो हुआ उसे समझें और धीरे-धीरे संभलें।",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "थोड़ा रुकें, सुकून पाएं और अपनी ऊर्जा वापस लाएं।",
+    "productStart": "व्यक्तित्व टेस्ट दें",
+    "productSoon": "जल्द आ रहा है"
+  },
+  "fil": {
+    "productHeading": "Anong nasa isip mo?",
+    "selfTitle": "Kilalanin ang Sarili",
+    "selfDesc": "Alamin ang personalidad mo at kung ano ang nagpapakilala sa iyo.",
+    "heartTitle": "Pag-move On sa Toxic na Ex",
+    "heartDesc": "Unawain ang nangyari at unti-unting bumangon.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Huminga muna, alagaan ang kapayapaan mo, at magpahinga.",
+    "productStart": "Sagutan ang personality test",
+    "productSoon": "Malapit na"
+  },
+  "ru": {
+    "productHeading": "О чём вы думаете?",
+    "selfTitle": "Разобраться в себе",
+    "selfDesc": "Узнайте больше о своём характере и о том, что вами движет.",
+    "heartTitle": "Пережить расставание",
+    "heartDesc": "Осмыслите прошлое и постепенно найдите опору.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Сделайте паузу, восстановите силы и верните спокойствие.",
+    "productStart": "Пройти тест личности",
+    "productSoon": "Скоро"
+  },
+  "pt": {
+    "productHeading": "O que está na sua cabeça?",
+    "selfTitle": "Entendendo Quem Eu Sou",
+    "selfDesc": "Explore sua personalidade e descubra o que move você.",
+    "heartTitle": "Superando Meu Ex Tóxico",
+    "heartDesc": "Entenda o que aconteceu e encontre seu equilíbrio de novo.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Faça uma pausa, preserve sua paz e recarregue as energias.",
+    "productStart": "Fazer o teste de personalidade",
+    "productSoon": "Em breve"
+  },
+  "es": {
+    "productHeading": "¿Qué tienes en mente?",
+    "selfTitle": "Entenderme Mejor",
+    "selfDesc": "Explora tu personalidad y lo que te mueve.",
+    "heartTitle": "Superar a Mi Ex Tóxico",
+    "heartDesc": "Entiende lo que pasó y recupera el equilibrio poco a poco.",
+    "detoxTitle": "Mind Detox",
+    "detoxDesc": "Tómate un respiro, cuida tu tranquilidad y recarga energías.",
+    "productStart": "Hacer el test de personalidad",
+    "productSoon": "Próximamente"
+  }
+};
+const langSelect=document.getElementById('language');function applyLang(lang){const dict={...translations.en,...(translations[lang]||{}), ...productTranslations.en, ...productTranslations[lang]};document.querySelectorAll('[data-i18n]').forEach(el=>{const val=dict[el.dataset.i18n];if(val)el.textContent=val});document.documentElement.lang=lang;langSelect.value=lang;try{localStorage.setItem('mibi-lang',lang)}catch(e){}}
 langSelect.addEventListener('change',e=>applyLang(e.target.value));const themeBtn=document.getElementById('themeToggle');function applyTheme(theme){document.documentElement.dataset.theme=theme;themeBtn.textContent=theme==='violet'?'☀ Peach':'☾ Violet';try{localStorage.setItem('mibi-theme',theme)}catch(e){}}themeBtn.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='violet'?'peach':'violet'));try{applyLang(localStorage.getItem('mibi-lang')||'en');applyTheme(localStorage.getItem('mibi-theme')||'peach')}catch(e){applyLang('en');applyTheme('peach')}
 </script>
 </body></html>
