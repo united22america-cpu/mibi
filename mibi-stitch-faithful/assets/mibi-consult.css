@@ -1,0 +1,14 @@
+/* Additions to the original Mibi design: colors, typography and mascot remain unchanged. */
+.customize {padding:22px 23px!important}.customize h2{margin-bottom:6px}.customize .muted{font-size:12px;margin:0 0 12px;color:var(--muted)}
+.customize .field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.customize label{font-size:12px;font-weight:700;color:var(--ink)}
+.customize select,.customize input{width:100%;background:#fff;border:1px solid #e5e4dd;border-radius:12px;padding:11px 12px;color:var(--ink);font:inherit;font-size:13px;outline:none}
+.customize select:focus,.customize input:focus{border-color:#93b49b}.customize input::placeholder{color:#91969c}
+.customize .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.customize .field-grid .field{min-width:0}
+.consent-row{display:flex;align-items:flex-start;gap:9px;font-size:12px;line-height:1.5;color:var(--muted)}.consent-row input{width:auto;margin-top:3px;flex:none;accent-color:#60846d}
+.mibi-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}.mibi-actions .secondary{color:var(--ink)}
+#copyPlan{display:none}#copyPlan.ready{display:inline-flex}.mibi-status{font-size:12px}.mibi-status.ready{color:#386f4f}.mibi-status.offline{color:#986b37}
+.tiny .notice{display:block;margin-top:5px}.chathead .sub{margin-top:5px}.mibi-loading{opacity:.8;animation:mibiPulse 1s ease-in-out infinite alternate}@keyframes mibiPulse{from{opacity:.55}to{opacity:1}}
+#messages .bubble{max-width:100%;overflow-wrap:anywhere}#messages .bubble a{color:inherit;text-decoration:underline}#messages .message.user .bubble a{color:#fff}
+#chatForm button:disabled,#planButton:disabled{cursor:wait;opacity:.6}#errorBox{display:none;padding:11px 14px;margin-top:10px;border-radius:12px;background:#fff1ee;color:#944e41;font-size:12px;line-height:1.5}#errorBox.visible{display:block}
+.note-chip{display:inline-flex;background:var(--lav);border-radius:999px;padding:5px 9px;font-size:11px;margin-top:8px}
+@media(max-width:550px){.customize .field-grid{grid-template-columns:1fr}.mibi-actions{flex-direction:column;align-items:stretch}.mibi-actions button{width:100%}}
