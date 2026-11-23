@@ -27,9 +27,21 @@ async function enforceLimit(context) {
   await context.env.MIBI_LIMITS.put(key,String(used+1),{expirationTtl:86400});
   return null;
 }
-export async function onRequestGet({env}) {
-  return json({ready:Boolean(env.OPENAI_API_KEY && env.MIBI_LIMITS),configurationRequired:!(env.OPENAI_API_KEY && env.MIBI_LIMITS)});
+
+export async function onRequestGet({ env }) {
+  const hasKey = Boolean(env.OPENAI_API_KEY);
+  const hasKV = Boolean(env.MIBI_LIMITS);
+
+  return json({
+    ready: hasKey && hasKV,
+    configurationRequired: !(hasKey && hasKV),
+    checks: {
+      openaiKey: hasKey,
+      kvNamespace: hasKV
+    }
+  });
 }
+
 export async function onRequestPost(context) {
   const {request,env}=context;
   const origin=request.headers.get('Origin');
